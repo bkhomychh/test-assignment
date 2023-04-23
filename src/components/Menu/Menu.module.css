@@ -1,0 +1,129 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.15);
+  overflow: auto;
+}
+
+.content {
+  position: relative;
+
+  padding: 30px 16px;
+  max-width: 266px;
+  min-height: 100%;
+
+  color: var(--color-text-secondary);
+  background-color: var(--color-accent);
+}
+
+.catalogBtn {
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: baseline;
+  column-gap: 10px;
+  width: 100%;
+
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary-hover);
+  border-radius: 20px;
+}
+
+.catalogBtn > svg {
+  fill: var(--color-accent);
+  stroke: var(--color-accent);
+}
+
+.links {
+  margin-bottom: 40px;
+
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  line-height: calc(17 / 15);
+}
+
+.links > li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.phone {
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  line-height: calc(19 / 17);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.socials a {
+  display: flex;
+
+  color: var(--color-text-quaternary);
+}
+
+.langs {
+  display: flex;
+
+  font-weight: 700;
+}
+
+.langs li:not(:last-child) {
+  border-right: 1px solid currentColor;
+}
+
+.langs li:first-child {
+  padding-right: 9px;
+}
+
+.langs li:last-child {
+  padding-left: 9px;
+}
+
+.langBtn {
+  font-size: var(--font-size-s);
+  line-height: calc(17 / 15);
+  color: var(--color-text-quaternary);
+  text-decoration: underline;
+}
+
+.langBtn:global(.active) {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.loginBtn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  line-height: calc(17 / 15);
+  text-decoration: underline;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: -45px;
+
+  display: flex;
+
+  color: var(--color-text-secondary);
+}

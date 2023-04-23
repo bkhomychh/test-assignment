@@ -1,18 +1,26 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import Header from 'components/Header';
+
+import classes from './Layout.module.css';
+
 const Layout = () => {
   return (
-    <>
-      <header>header</header>
-      <main>
-        main
-        <Suspense fallback={<p>Loading...</p>}>
-          <Outlet />
-        </Suspense>
+    <div className={classes.wrapper}>
+      <Header />
+      <main className={classes.main}>
+        <div className="container">
+          main
+          <Suspense fallback={<p>Loading...</p>}>
+            <Outlet />
+          </Suspense>
+        </div>
       </main>
-      <footer>footer</footer>
-    </>
+      <footer>
+        <div className="container">footer</div>
+      </footer>
+    </div>
   );
 };
 

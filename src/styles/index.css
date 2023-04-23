@@ -1,0 +1,16 @@
+@import './normalize.css';
+@import './variables.css';
+@import './specific.css';
+
+body {
+  font-size: var(--font-size-xs);
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: var(--font-size-s);
+  }
+}

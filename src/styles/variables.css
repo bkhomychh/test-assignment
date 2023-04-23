@@ -1,0 +1,25 @@
+:root {
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #585858;
+  --color-text-quaternary: #ffc5d6;
+
+  --color-bg-primary: #ffffff;
+  --color-bg-primary-hover: #ffeaf1;
+  --color-bg-secondary: rgba(255, 255, 255, 0.15);
+  --color-bg-info: #f99c11;
+
+  --color-accent: #d03664;
+  --color-accent-hover: #aa2b51;
+  --color-danger: #ff0000;
+
+  --color-border: #c7c7c7;
+  --color-border-active: #585858;
+
+  --font-size-xs: 14px;
+  --font-size-s: 15px;
+  --font-size-m: 16px;
+  --font-size-l: 17px;
+  --font-size-xl: 18px;
+  --font-size-xxl: 20px;
+}
