@@ -92,6 +92,13 @@
 				d="M25.474 10.143c0 5.2-4.215 9.415-9.415 9.415s-9.415-4.215-9.415-9.415c0-5.2 4.215-9.415 9.415-9.415s9.415 4.215 9.415 9.415z">
 			</path>
 		</symbol>
-
+		<symbol id="icon-arrow-left" viewBox="0 0 29 32">
+			<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.6667"
+				d="M16.272 2.027l-13.605 14.007M2.667 16.034l13.605 14.007M2.667 16.034h26.667"></path>
+		</symbol>
+		<symbol id="icon-arrow-right" viewBox="0 0 32 32">
+			<path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.9091"
+				d="M14.249 30.545l14.842-14.545M29.091 16l-14.842-14.545M29.091 16h-29.091"></path>
+		</symbol>
 	</defs>
 </svg>
