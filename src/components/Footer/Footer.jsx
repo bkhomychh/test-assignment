@@ -6,7 +6,7 @@ import classes from './Footer.module.css';
 import sprite from 'images/sprite.svg';
 import mastercardImg from 'images/footer/mastercard.jpg';
 import visaImg from 'images/footer/visa.jpg';
-import liqpayImg from 'images/footer/liqpay.jpg';
+import liqPayImg from 'images/footer/liqpay.jpg';
 
 const Footer = () => {
   return (
@@ -119,7 +119,7 @@ const Footer = () => {
               <img src={visaImg} alt="Visa" />
             </li>
             <li>
-              <img src={liqpayImg} alt="LiqPay" />
+              <img src={liqPayImg} alt="LiqPay" />
             </li>
           </ul>
         </div>

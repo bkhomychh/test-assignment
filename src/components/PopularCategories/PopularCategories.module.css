@@ -1,0 +1,137 @@
+.categories {
+  display: grid;
+  grid-template: repeat(6, 180px) / 1fr;
+  gap: 16px;
+}
+
+.category {
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carriage {
+  background-image: url('images/categories/carriage-s.png'),
+    linear-gradient(208.16deg, #6ad245 0%, #58be34 100%);
+}
+
+.room {
+  background-image: url('images/categories/room-s.png');
+  background-color: #f99c11;
+}
+
+.pot {
+  background-image: url('images/categories/pot-s.png'),
+    linear-gradient(248.14deg, #2deae4 0%, #27d8d2 100%);
+}
+
+.puzzles {
+  background-image: url('images/categories/puzzles-s.png'),
+    linear-gradient(247.06deg, #d84545 -1.64%, #cc3c3c 100%);
+}
+
+.bath {
+  background-image: url('images/categories/bath-s.png'),
+    linear-gradient(248.14deg, #a24fe2 0%, #8e3ad0 100%);
+}
+
+.bed {
+  background-image: url('images/categories/bed-s.png'),
+    linear-gradient(208.16deg, #4f8ae2 0%, #3a73c9 100%);
+}
+
+.categories a {
+  padding: 30px;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.categories span {
+  padding: 10px;
+  display: inline-block;
+  max-width: 162px;
+
+  font-weight: 400;
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+
+  border-radius: 10px;
+}
+
+.carriage span {
+  background-color: #54ad33;
+}
+.room span {
+  background-color: #db8300;
+}
+.pot span {
+  background-color: #1fc0bb;
+}
+.puzzles span {
+  background-color: #a43a3a;
+}
+
+.bath span {
+  background-color: #7834ad;
+}
+
+.bed span {
+  background-color: #3868b2;
+}
+
+@media screen and (min-width: 768px) {
+  .categories {
+    grid-template: repeat(4, 190px) / repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .categories span {
+    max-width: 172px;
+
+    font-size: var(--font-size-s);
+  }
+
+  .carriage {
+    grid-row: 1 / 3;
+
+    background-image: url('images/categories/carriage-m.png'),
+      linear-gradient(208.16deg, #6ad245 0%, #58be34 100%);
+    background-position: right top;
+  }
+
+  .room {
+    background-image: url('images/categories/room-m.png');
+  }
+
+  .pot {
+    background-image: url('images/categories/pot-m.png'),
+      linear-gradient(248.14deg, #2deae4 0%, #27d8d2 100%);
+  }
+
+  .puzzles {
+    background-image: url('images/categories/puzzles-m.png'),
+      linear-gradient(247.06deg, #d84545 -1.64%, #cc3c3c 100%);
+  }
+
+  .bath {
+    background-image: url('images/categories/bath-m.png'),
+      linear-gradient(248.14deg, #a24fe2 0%, #8e3ad0 100%);
+  }
+
+  .bed {
+    grid-row: 3 / 5;
+    grid-column: 2 / 3;
+
+    background-image: url('images/categories/bed-m.png'),
+      linear-gradient(208.16deg, #4f8ae2 0%, #3a73c9 100%);
+    background-position: right top;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+}
