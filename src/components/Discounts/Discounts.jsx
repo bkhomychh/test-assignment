@@ -1,20 +1,57 @@
+import { Navigation, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import Card from 'components/Card';
+
+import classes from './Discounts.module.css';
+import goods from 'data/discounts.json';
+import sprite from 'images/sprite.svg';
+
+const sliderOptions = {
+  slidesPerView: 'auto',
+  spaceBetween: 16,
+  speed: 750,
+
+  autoplay: {
+    delay: 3500,
+    pauseOnMouseEnter: true,
+  },
+  navigation: {
+    prevEl: `.${classes.prevBtn}`,
+    nextEl: `.${classes.nextBtn}`,
+  },
+  modules: [Autoplay, Navigation],
+
+  breakpoints: {
+    768: {
+      spaceBetween: 30,
+    },
+  },
+};
+
 const Discounts = () => {
   return (
-    <section>
-      <div>
-        <span>Sale</span>
-      </div>
+    <Swiper {...sliderOptions}>
+      {goods.map((item, index) => (
+        <SwiperSlide className={classes.slide} key={index}>
+          <Card {...item} />
+        </SwiperSlide>
+      ))}
 
-      <div>
-        <div>
-          <img src="" alt="" />
-          <span>-10%</span>
-        </div>
-        <h3>Коляска 2в1 Anex M/Type Dune mt-01Q</h3>
-        <p>6000 грн</p>
-        <p>5000 грн</p>
-      </div>
-    </section>
+      <button className={classes.prevBtn} type="button">
+        <svg width="20px" height="20px">
+          <use href={sprite + '#icon-arrow-left'}></use>
+        </svg>
+      </button>
+      <button className={classes.nextBtn} type="button">
+        <svg width="20px" height="20px">
+          <use href={sprite + '#icon-arrow-right'}></use>
+        </svg>
+      </button>
+    </Swiper>
   );
 };
 

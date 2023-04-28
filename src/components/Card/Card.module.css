@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.thumb {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 156px;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thumb > img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.thumb > span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  padding: 5px;
+  display: inline-block;
+
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-info);
+  border-radius: 5px;
+}
+
+.title {
+  font-weight: 300;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+
+  color: var(--color-text-primary);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.price,
+.newPrice {
+  font-weight: 700;
+  font-size: var(--font-size-s);
+  line-height: calc(17 / 15);
+}
+
+.price {
+  color: var(--color-text-primary);
+}
+
+.newPrice {
+  color: var(--color-bg-info);
+}
+
+.oldPrice {
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration-line: line-through;
+
+  color: var(--color-text-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    gap: 12px;
+  }
+
+  .thumb {
+    min-height: 234px;
+  }
+
+  .title {
+    font-size: var(--font-size-s);
+  }
+
+  .meta {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .oldPrice {
+    font-size: var(--font-size-xs);
+  }
+
+  .price,
+  .newPrice {
+    font-size: var(--font-size-l);
+  }
+}

@@ -43,32 +43,30 @@ const sliderOptions = {
 
 const Slider = () => {
   return (
-    <section>
-      <Swiper {...sliderOptions}>
-        {slides.map(({ slideXS, slideS, slideM, slideL }, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <picture>
-                <source srcSet={slideL} media="(min-width: 1000px)" />
-                <source srcSet={slideM} media="(min-width: 768px)" />
-                <source srcSet={slideS} media="(max-width: 767px)" />
-                <img src={slideS} alt="Sleepy child" />
-              </picture>
-            </SwiperSlide>
-          );
-        })}
-        <button className={classes.prevBtn} type="button">
-          <svg width="20px" height="20px">
-            <use href={sprite + '#icon-arrow-left'}></use>
-          </svg>
-        </button>
-        <button className={classes.nextBtn} type="button">
-          <svg width="20px" height="20px">
-            <use href={sprite + '#icon-arrow-right'}></use>
-          </svg>
-        </button>
-      </Swiper>
-    </section>
+    <Swiper className={classes.slider} {...sliderOptions}>
+      {slides.map(({ slideS, slideM, slideL }, index) => {
+        return (
+          <SwiperSlide className={classes.slide} key={index}>
+            <picture>
+              <source srcSet={slideL} media="(min-width: 1000px)" />
+              <source srcSet={slideM} media="(min-width: 768px)" />
+              <source srcSet={slideS} media="(max-width: 767px)" />
+              <img src={slideS} alt="Sleepy child" />
+            </picture>
+          </SwiperSlide>
+        );
+      })}
+      <button className={classes.prevBtn} type="button">
+        <svg width="20px" height="20px">
+          <use href={sprite + '#icon-arrow-left'}></use>
+        </svg>
+      </button>
+      <button className={classes.nextBtn} type="button">
+        <svg width="20px" height="20px">
+          <use href={sprite + '#icon-arrow-right'}></use>
+        </svg>
+      </button>
+    </Swiper>
   );
 };
 

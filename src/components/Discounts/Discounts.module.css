@@ -1,0 +1,37 @@
+.slide {
+  width: 156px;
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-accent);
+  background-color: transparent;
+  transform: translateY(-50%);
+}
+
+.prevBtn:disabled,
+.nextBtn:disabled {
+  display: none;
+}
+
+.prevBtn {
+  left: 0;
+}
+
+.nextBtn {
+  right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .slide {
+    width: 234px;
+  }
+}

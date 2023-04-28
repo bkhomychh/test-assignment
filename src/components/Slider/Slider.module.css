@@ -1,11 +1,11 @@
-:global(.swiper) {
+.slider {
   margin-bottom: 64px;
 
   border-radius: 20px;
   overflow: hidden;
 }
 
-:global(.swiper-slide) img {
+.slide img {
   min-height: 260px;
   object-fit: cover;
   object-position: center;
@@ -67,7 +67,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  :global(.swiper) {
+  .slider {
     margin-bottom: 82px;
   }
 

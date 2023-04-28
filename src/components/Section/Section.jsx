@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 
 import classes from './Section.module.css';
 
-const Section = ({ title, children }) => {
+const Section = ({ title, label, children }) => {
   return (
     <section className={classes.section}>
-      {title && <h2 className={classes.title}>{title}</h2>}
+      <div className={classes.box}>
+        {title && <h2 className={classes.title}>{title}</h2>}
+        {label && <span className={classes.label}>{label}</span>}
+      </div>
       {children}
     </section>
   );
@@ -13,6 +16,7 @@ const Section = ({ title, children }) => {
 
 Section.propTypes = {
   title: PropTypes.string,
+  label: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 

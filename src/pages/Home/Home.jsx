@@ -8,8 +8,10 @@ import PopularCategories from 'components/PopularCategories';
 const Home = () => {
   return (
     <div className={classes.wrapper}>
-      <Slider />
-      <Section title="Акція!">
+      <Section>
+        <Slider />
+      </Section>
+      <Section title="Акція!" label="Sale">
         <Discounts />
       </Section>
       <Section title="Популярні категорії">
