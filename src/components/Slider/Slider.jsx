@@ -19,14 +19,14 @@ const slide = {
 
 const slides = [slide, slide, slide];
 
-const sliderOptions = {
+const swiperOptions = {
   slidesPerView: 1,
   spaceBetween: 30,
   speed: 750,
   loop: true,
 
   autoplay: {
-    delay: 17500,
+    delay: 7500,
     pauseOnMouseEnter: true,
   },
   navigation: {
@@ -43,7 +43,7 @@ const sliderOptions = {
 
 const Slider = () => {
   return (
-    <Swiper className={classes.slider} {...sliderOptions}>
+    <Swiper className={classes.slider} {...swiperOptions}>
       {slides.map(({ slideS, slideM, slideL }, index) => {
         return (
           <SwiperSlide className={classes.slide} key={index}>

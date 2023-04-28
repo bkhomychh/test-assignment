@@ -33,6 +33,16 @@
   border-radius: 10px;
 }
 
+.link {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
 @media screen and (min-width: 768px) {
   .section:not(:last-child) {
     margin-bottom: 80px;
