@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './Layout';
+import AuthLayout from './AuthLayout';
 
 const Home = lazy(() => import('pages/Home'));
 const Catalog = lazy(() => import('pages/Catalog'));
 const ProductDetails = lazy(() => import('pages/ProductDetails'));
-const SignIn = lazy(() => import('pages/SignIn'));
+const Login = lazy(() => import('pages/Login'));
 const Register = lazy(() => import('pages/Register'));
 
 const App = () => {
@@ -16,8 +17,10 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path=":catalog" element={<Catalog />} />
           <Route path=":catalog/:id" element={<ProductDetails />} />
-          <Route path="login" element={<SignIn />} />
-          <Route path="register" element={<Register />} />
+        </Route>
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
     </>

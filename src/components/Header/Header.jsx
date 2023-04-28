@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import classes from './Header.module.css';
 import sprite from 'images/sprite.svg';
-import logo from 'images/logo.svg';
 import Menu from 'components/Menu';
 
 const Header = () => {
@@ -23,7 +22,9 @@ const Header = () => {
               </svg>
             </button>
             <Link className={classes.logo} to="/">
-              <img src={logo} alt="Logo" />
+              <svg>
+                <use href={sprite + '#icon-logo'}></use>
+              </svg>
             </Link>
           </div>
 

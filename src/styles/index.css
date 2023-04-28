@@ -14,3 +14,9 @@ body {
     font-size: var(--font-size-s);
   }
 }
+
+a,
+button,
+input {
+  transition: all 250ms ease-in-out;
+}
