@@ -5,6 +5,10 @@
   max-width: 480px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     padding: 0 30px;

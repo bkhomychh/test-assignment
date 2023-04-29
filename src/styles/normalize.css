@@ -304,7 +304,8 @@ button {
 }
 
 a,
-button {
+button,
+label {
   cursor: pointer;
 }
 

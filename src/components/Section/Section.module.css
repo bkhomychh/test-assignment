@@ -1,7 +1,7 @@
 .section {
 }
 
-.section:not(:last-child) {
+.section {
   margin-bottom: 60px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .section:not(:last-child) {
+  .section {
     margin-bottom: 80px;
   }
 

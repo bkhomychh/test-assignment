@@ -1,0 +1,23 @@
+.wrapper {
+  padding-top: 30px;
+}
+
+.title {
+  margin-bottom: 30px;
+
+  font-size: var(--font-size-xl);
+  line-height: calc(20 / 18);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.link {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+}

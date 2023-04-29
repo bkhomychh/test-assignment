@@ -1,0 +1,22 @@
+.list {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 156px);
+  grid-auto-rows: auto;
+  justify-content: space-evenly;
+  gap: 20px 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    margin-bottom: 50px;
+    grid-template-columns: repeat(2, 234px);
+    gap: 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .list {
+    grid-template-columns: repeat(3, 234px);
+  }
+}

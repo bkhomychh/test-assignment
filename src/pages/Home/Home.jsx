@@ -6,7 +6,7 @@ import About from 'components/About';
 import PopularCategories from 'components/PopularCategories';
 
 import classes from './Home.module.css';
-import items from 'data/goods.json';
+import items from 'data/items.json';
 
 const Home = () => {
   return (
