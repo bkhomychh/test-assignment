@@ -9,7 +9,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "Bair",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-01"
 	},
 	{
 		"id": 2,
@@ -21,7 +22,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "BabyOno",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-02"
 	},
 	{
 		"id": 3,
@@ -33,7 +35,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Carrello",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-03"
 	},
 	{
 		"id": 4,
@@ -45,7 +48,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "OK Baby",
-		"category": "Муфти"
+		"category": "Муфти",
+		"code": "EP-04"
 	},
 	{
 		"id": 5,
@@ -57,7 +61,8 @@
 		"discount": "",
 		"available": false,
 		"producer": "Babyroom",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-05"
 	},
 	{
 		"id": 6,
@@ -69,7 +74,8 @@
 		"discount": "30%",
 		"available": false,
 		"producer": "ZD",
-		"category": "Зимові конверти"
+		"category": "Зимові конверти",
+		"code": "EP-06"
 	},
 	{
 		"id": 7,
@@ -81,7 +87,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Маленька Соня",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-07"
 	},
 	{
 		"id": 8,
@@ -93,7 +100,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Espiro",
-		"category": "Муфти"
+		"category": "Муфти",
+		"code": "EP-08"
 	},
 	{
 		"id": 9,
@@ -105,7 +113,8 @@
 		"discount": "30%",
 		"available": false,
 		"producer": "Espiro",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-09"
 	},
 	{
 		"id": 10,
@@ -117,7 +126,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Маленька Соня",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-10"
 	},
 	{
 		"id": 11,
@@ -129,7 +139,8 @@
 		"discount": "15%",
 		"available": false,
 		"producer": "ZD",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-11"
 	},
 	{
 		"id": 12,
@@ -141,7 +152,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Babyroom",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-12"
 	},
 	{
 		"id": 13,
@@ -153,7 +165,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "OK Baby",
-		"category": "Зимові конверти"
+		"category": "Зимові конверти",
+		"code": "EP-13"
 	},
 	{
 		"id": 14,
@@ -165,7 +178,8 @@
 		"discount": "",
 		"available": false,
 		"producer": "Carrello",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-14"
 	},
 	{
 		"id": 15,
@@ -177,7 +191,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "BabyOno",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-15"
 	},
 	{
 		"id": 16,
@@ -189,7 +204,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Bair",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-16"
 	},
 	{
 		"id": 17,
@@ -201,7 +217,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-17"
 	},
 	{
 		"id": 18,
@@ -213,7 +230,8 @@
 		"discount": "30%",
 		"available": false,
 		"producer": "Bair",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-18"
 	},
 	{
 		"id": 19,
@@ -225,7 +243,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "BabyOno",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-19"
 	},
 	{
 		"id": 20,
@@ -237,7 +256,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Carrello",
-		"category": "Муфти"
+		"category": "Муфти",
+		"code": "EP-20"
 	},
 	{
 		"id": 21,
@@ -249,7 +269,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "OK Baby",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-21"
 	},
 	{
 		"id": 22,
@@ -261,7 +282,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Маленька Соня",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-22"
 	},
 	{
 		"id": 23,
@@ -273,7 +295,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "ZD",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-23"
 	},
 	{
 		"id": 24,
@@ -285,7 +308,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "ZD",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-24"
 	},
 	{
 		"id": 25,
@@ -297,7 +321,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Espiro",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-25"
 	},
 	{
 		"id": 26,
@@ -309,7 +334,8 @@
 		"discount": "15%",
 		"available": false,
 		"producer": "Espiro",
-		"category": "Муфти"
+		"category": "Муфти",
+		"code": "EP-26"
 	},
 	{
 		"id": 27,
@@ -321,7 +347,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Espiro",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-27"
 	},
 	{
 		"id": 28,
@@ -333,7 +360,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "Babyroom",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-28"
 	},
 	{
 		"id": 29,
@@ -345,7 +373,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "Bair",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-29"
 	},
 	{
 		"id": 30,
@@ -357,7 +386,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "BabyOno",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-30"
 	},
 	{
 		"id": 31,
@@ -369,7 +399,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Anex",
-		"category": "Муфти"
+		"category": "Муфти",
+		"code": "EP-31"
 	},
 	{
 		"id": 32,
@@ -381,7 +412,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-32"
 	},
 	{
 		"id": 33,
@@ -393,7 +425,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-33"
 	},
 	{
 		"id": 34,
@@ -405,7 +438,8 @@
 		"discount": "30%",
 		"available": true,
 		"producer": "Babyroom",
-		"category": "Аксесуари та комплектуючі"
+		"category": "Аксесуари та комплектуючі",
+		"code": "EP-34"
 	},
 	{
 		"id": 35,
@@ -417,7 +451,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-35"
 	},
 	{
 		"id": 36,
@@ -429,7 +464,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски 3в1"
+		"category": "Коляски 3в1",
+		"code": "EP-36"
 	},
 	{
 		"id": 37,
@@ -441,7 +477,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "Anex",
-		"category": "Коляски 3в1"
+		"category": "Коляски 3в1",
+		"code": "EP-37"
 	},
 	{
 		"id": 38,
@@ -453,7 +490,8 @@
 		"discount": "15%",
 		"available": false,
 		"producer": "Anex",
-		"category": "Коляски 3в1"
+		"category": "Коляски 3в1",
+		"code": "EP-38"
 	},
 	{
 		"id": 39,
@@ -465,7 +503,8 @@
 		"discount": "15%",
 		"available": true,
 		"producer": "ZD",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-39"
 	},
 	{
 		"id": 40,
@@ -477,7 +516,8 @@
 		"discount": "",
 		"available": false,
 		"producer": "Маленька Соня",
-		"category": "Коляски 3в1"
+		"category": "Коляски 3в1",
+		"code": "EP-40"
 	},
 	{
 		"id": 41,
@@ -489,7 +529,8 @@
 		"discount": "",
 		"available": true,
 		"producer": "Carrello",
-		"category": "Коляски для двійні"
+		"category": "Коляски для двійні",
+		"code": "EP-41"
 	},
 	{
 		"id": 42,
@@ -501,6 +542,7 @@
 		"discount": "",
 		"available": true,
 		"producer": "BabyOno",
-		"category": "Коляски 3в1"
+		"category": "Коляски 3в1",
+		"code": "EP-42"
 	}
 ]

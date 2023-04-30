@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import classes from './Card.module.css';
 import imgPlaceholder from 'images/img-placeholder.png';
 
 const Card = ({ id, title, img, price, discount, newPrice }) => {
+  const location = useLocation();
+
   return (
-    <Link className={classes.card} to={`${id}`}>
+    <Link className={classes.card} to={`${id}`} state={{ from: location }}>
       <div className={classes.thumb}>
         <img src={img || imgPlaceholder} alt={title} loading="lazy" />
         {discount && <span>-{discount}</span>}
