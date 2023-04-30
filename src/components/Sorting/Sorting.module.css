@@ -1,0 +1,85 @@
+.sorting {
+  position: relative;
+
+  margin-bottom: 30px;
+
+  font-weight: 300;
+  font-size: var(--font-size-xs);
+  line-height: calc(17 / 15);
+
+  color: var(--color-border-active);
+}
+
+.sortingBtn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  color: var(--color-text-primary);
+}
+
+.sortingBtn svg {
+  transition: transform 250ms ease-in-out;
+}
+
+.sortingBtn.active svg {
+  transform: rotate(-180deg);
+}
+
+.options {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  z-index: 5;
+
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 20px;
+
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.sortingBtn.active + .options {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.options button {
+  text-decoration: underline;
+}
+
+.options .currentSorting {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .sorting {
+    font-size: var(--font-size-s);
+  }
+
+  .options {
+    position: static;
+
+    padding: 0;
+    flex-direction: row;
+
+    border: none;
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+  }
+
+  .sortingBtn {
+    display: none;
+  }
+}

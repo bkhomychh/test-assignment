@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import classes from './Card.module.css';
 import imgPlaceholder from 'images/img-placeholder.png';
 
-const Card = ({ title, img, price, discount, newPrice }) => {
+const Card = ({ id, title, img, price, discount, newPrice }) => {
   return (
-    <Link className={classes.card} to="/">
+    <Link className={classes.card} to={`${id}`}>
       <div className={classes.thumb}>
         <img src={img || imgPlaceholder} alt={title} loading="lazy" />
         {discount && <span>-{discount}</span>}

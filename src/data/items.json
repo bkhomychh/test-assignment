@@ -1,226 +1,506 @@
 [
 	{
+		"id": 1,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 9.8,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": true,
+		"producer": "Bair",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 2,
 		"title": "Пляшечка 130 мл",
+		"rate": 5.4,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "BabyOno",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 3,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 9.1,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "Carrello",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 4,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 7.8,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "OK Baby",
+		"category": "Муфти"
 	},
 	{
+		"id": 5,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 7.5,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": false,
+		"producer": "Babyroom",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 6,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 5.3,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": false,
+		"producer": "ZD",
+		"category": "Зимові конверти"
 	},
 	{
+		"id": 7,
 		"title": "Пляшечка 130 мл",
+		"rate": 4.1,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Маленька Соня",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 8,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 9.6,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "Espiro",
+		"category": "Муфти"
 	},
 	{
+		"id": 9,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 4.7,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": false,
+		"producer": "Espiro",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 10,
 		"title": "Пляшечка 130 мл",
+		"rate": 7.3,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Маленька Соня",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 11,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 5.8,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": false,
+		"producer": "ZD",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 12,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 9.2,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Babyroom",
+		"category": "Коляски для двійні"
 	},
 	{
+		"id": 13,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 3.8,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "OK Baby",
+		"category": "Зимові конверти"
 	},
 	{
+		"id": 14,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 7.9,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": false,
+		"producer": "Carrello",
+		"category": "Коляски для двійні"
 	},
 	{
+		"id": 15,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 9,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": true,
+		"producer": "BabyOno",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 16,
 		"title": "Пляшечка 130 мл",
+		"rate": 5.2,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Bair",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 17,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 7.1,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски для двійні"
 	},
 	{
+		"id": 18,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 6.3,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": false,
+		"producer": "Bair",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 19,
 		"title": "Пляшечка 130 мл",
+		"rate": 1.8,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "BabyOno",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 20,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 7.8,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "Carrello",
+		"category": "Муфти"
 	},
 	{
+		"id": 21,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 3.7,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": true,
+		"producer": "OK Baby",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 22,
 		"title": "Пляшечка 130 мл",
+		"rate": 8.8,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Маленька Соня",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 23,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 9.4,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "ZD",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 24,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 3.5,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "ZD",
+		"category": "Коляски для двійні"
 	},
 	{
+		"id": 25,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 3.1,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Espiro",
+		"category": "Коляски для двійні"
 	},
 	{
+		"id": 26,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 7.8,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": false,
+		"producer": "Espiro",
+		"category": "Муфти"
 	},
 	{
+		"id": 27,
 		"title": "Пляшечка 130 мл",
+		"rate": 5.5,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Espiro",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 28,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 6.7,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": true,
+		"producer": "Babyroom",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 29,
 		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 8.8,
 		"img": "https://i.ibb.co/JpxrYfM/ball.png",
 		"price": 300,
 		"newPrice": 200,
-		"discount": "30%"
+		"discount": "30%",
+		"available": true,
+		"producer": "Bair",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 30,
 		"title": "Пляшечка 130 мл",
+		"rate": 2.8,
 		"img": "https://i.ibb.co/FsHXYVM/bottle.png",
 		"price": 100,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "BabyOno",
+		"category": "Аксесуари та комплектуючі"
 	},
 	{
+		"id": 31,
 		"title": "Суміш молочна суха Nutrilon для...",
+		"rate": 5.8,
 		"img": "https://i.ibb.co/StP4F2k/mixture.png",
 		"price": 350,
 		"newPrice": 300,
-		"discount": "15%"
+		"discount": "15%",
+		"available": true,
+		"producer": "Anex",
+		"category": "Муфти"
 	},
 	{
+		"id": 32,
 		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 9.8,
 		"img": "https://i.ibb.co/19qKqMv/seat.png",
 		"price": 4300,
 		"newPrice": null,
-		"discount": ""
+		"discount": "",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски для двійні"
+	},
+	{
+		"id": 33,
+		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 5.8,
+		"img": "https://i.ibb.co/19qKqMv/seat.png",
+		"price": 4300,
+		"newPrice": null,
+		"discount": "",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски для двійні"
+	},
+	{
+		"id": 34,
+		"title": "Іграшка-головоломка Same Toy IQ Ball Cube",
+		"rate": 6.7,
+		"img": "https://i.ibb.co/JpxrYfM/ball.png",
+		"price": 300,
+		"newPrice": 200,
+		"discount": "30%",
+		"available": true,
+		"producer": "Babyroom",
+		"category": "Аксесуари та комплектуючі"
+	},
+	{
+		"id": 35,
+		"title": "Автокрісло Maxi-Cosi Citi Concrete grey",
+		"rate": 9.8,
+		"img": "https://i.ibb.co/19qKqMv/seat.png",
+		"price": 4300,
+		"newPrice": null,
+		"discount": "",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски для двійні"
+	},
+	{
+		"id": 36,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 8.7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 6000,
+		"newPrice": 5000,
+		"discount": "15%",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски 3в1"
+	},
+	{
+		"id": 37,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 7.7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 6000,
+		"newPrice": 5000,
+		"discount": "15%",
+		"available": true,
+		"producer": "Anex",
+		"category": "Коляски 3в1"
+	},
+	{
+		"id": 38,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 8.8,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 6000,
+		"newPrice": 5000,
+		"discount": "15%",
+		"available": false,
+		"producer": "Anex",
+		"category": "Коляски 3в1"
+	},
+	{
+		"id": 39,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 9.7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 6000,
+		"newPrice": 5000,
+		"discount": "15%",
+		"available": true,
+		"producer": "ZD",
+		"category": "Коляски для двійні"
+	},
+	{
+		"id": 40,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 8.7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 7000,
+		"newPrice": null,
+		"discount": "",
+		"available": false,
+		"producer": "Маленька Соня",
+		"category": "Коляски 3в1"
+	},
+	{
+		"id": 41,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 4000,
+		"newPrice": null,
+		"discount": "",
+		"available": true,
+		"producer": "Carrello",
+		"category": "Коляски для двійні"
+	},
+	{
+		"id": 42,
+		"title": "Коляска 2в1 Anex M/Type Dune mt-01Q",
+		"rate": 5.7,
+		"img": "https://i.ibb.co/SwcS2Hv/carriage.png",
+		"price": 5000,
+		"newPrice": null,
+		"discount": "",
+		"available": true,
+		"producer": "BabyOno",
+		"category": "Коляски 3в1"
 	}
 ]

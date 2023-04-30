@@ -52,6 +52,7 @@
   opacity: 0;
 }
 
+.checkbox:focus + .icon::after,
 .checkbox:checked + .icon::after {
   opacity: 1;
 }

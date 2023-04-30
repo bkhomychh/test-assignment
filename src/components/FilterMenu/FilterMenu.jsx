@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import { useCloseModal } from 'hooks';
 
 import Checkbox from 'components/Checkbox';
+import Range from 'components/Range';
 
 import classes from './FilterMenu.module.css';
 import sprite from 'images/sprite.svg';
@@ -9,10 +12,37 @@ import sprite from 'images/sprite.svg';
 import producers from 'data/producers.json';
 import categories from 'data/categories.json';
 
-const FilterMenu = ({ closeMenu }) => {
+const FilterMenu = ({ closeMenu, setFilters }) => {
   const [isCategoryShown, setIsCategoryShown] = useState(true);
   const [isPriceShown, setIsPriceShown] = useState(true);
   const [isProducerShown, setIsProducerShown] = useState(true);
+
+  useCloseModal(closeMenu);
+
+  const formik = useFormik({
+    initialValues: {
+      category: '',
+      available: false,
+      discount: false,
+      price: [0, 30000],
+      producer: [],
+    },
+
+    onSubmit: (values, { resetForm }) => {
+      const filters = [];
+      const entries = Object.entries(values);
+
+      entries.forEach(([name, value]) => {
+        if (value === '' || value === false || value.length < 1) {
+          return;
+        }
+
+        filters.push({ name, value });
+      });
+
+      setFilters(filters);
+    },
+  });
 
   const showSection = ({ target }) => {
     const section = target.dataset.section;
@@ -36,28 +66,12 @@ const FilterMenu = ({ closeMenu }) => {
     }
   };
 
-  useEffect(() => {
-    const handleClick = ({ target }) => {
-      const shouldCloseMenu = target.classList.contains(classes.backdrop);
-
-      if (shouldCloseMenu) {
-        closeMenu();
-      }
-    };
-
-    window.addEventListener('click', handleClick);
-    document.body.classList.add('no-scroll');
-
-    return () => {
-      window.removeEventListener('click', handleClick);
-      document.body.classList.remove('no-scroll');
-    };
-  }, [closeMenu]);
+  const { handleSubmit, handleChange, values, setFieldValue } = formik;
 
   return (
     <div className={classes.backdrop}>
       <div className={classes.modal}>
-        <form noValidate>
+        <form onSubmit={handleSubmit} noValidate>
           <div className={classes.box}>
             <button
               className={`${classes.toggle} ${isCategoryShown ? classes.active : ''}`}
@@ -75,7 +89,14 @@ const FilterMenu = ({ closeMenu }) => {
               <div className={classes.list}>
                 {categories.map(({ id, name }) => (
                   <label key={id}>
-                    <input className={classes.radio} type="radio" name="category" value={name} />
+                    <input
+                      className={classes.radio}
+                      type="radio"
+                      name="category"
+                      value={name}
+                      checked={values.category === name}
+                      onChange={handleChange}
+                    />
                     <span>{name}</span>
                   </label>
                 ))}
@@ -84,11 +105,15 @@ const FilterMenu = ({ closeMenu }) => {
           </div>
 
           <div className={classes.box}>
-            <Checkbox name="available">В наявності</Checkbox>
+            <Checkbox name="available" checked={values.available} onChange={handleChange}>
+              В наявності
+            </Checkbox>
           </div>
 
           <div className={classes.box}>
-            <Checkbox name="discount"> Зі знижкою</Checkbox>
+            <Checkbox name="discount" checked={values.discount} onChange={handleChange}>
+              Зі знижкою
+            </Checkbox>
           </div>
 
           <div className={classes.box}>
@@ -103,7 +128,35 @@ const FilterMenu = ({ closeMenu }) => {
                 <use href={sprite + '#icon-arrow-down'}></use>
               </svg>
             </button>
-            {isPriceShown && <input type="range" name="price" min={0} max={30000} />}
+            {isPriceShown && (
+              <>
+                <Range value={values.price} onChange={val => setFieldValue('price', val)} />
+                <div className={classes.container}>
+                  <input
+                    className={classes.input}
+                    type="text"
+                    value={values.price[0]}
+                    onChange={({ target }) =>
+                      setFieldValue('price', [target.value, values.price[1]])
+                    }
+                  />
+                  <span>-</span>
+                  <input
+                    className={classes.input}
+                    type="text"
+                    value={values.price[1]}
+                    onChange={({ target }) =>
+                      setFieldValue('price', [+values.price[0], +target.value])
+                    }
+                  />
+                  <button type="submit">
+                    <svg width="16px" height="16px">
+                      <use href={sprite + '#icon-arrow-right'}></use>
+                    </svg>
+                  </button>
+                </div>
+              </>
+            )}
           </div>
 
           <div className={classes.box}>
@@ -122,7 +175,13 @@ const FilterMenu = ({ closeMenu }) => {
             {isProducerShown && (
               <div className={classes.list}>
                 {producers.map(({ name, id }) => (
-                  <Checkbox name="producer" value={name} key={id}>
+                  <Checkbox
+                    key={id}
+                    name="producer"
+                    value={name}
+                    checked={values.producer.includes(name)}
+                    onChange={handleChange}
+                  >
                     {name}
                   </Checkbox>
                 ))}

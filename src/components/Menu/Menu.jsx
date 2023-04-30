@@ -1,28 +1,12 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useCloseModal } from 'hooks';
 
 import classes from './Menu.module.css';
 import sprite from 'images/sprite.svg';
 
 const Menu = ({ closeMenu }) => {
-  useEffect(() => {
-    const handleClick = ({ target }) => {
-      const shouldCloseMenu = target.classList.contains(classes.backdrop);
-
-      if (shouldCloseMenu) {
-        closeMenu();
-      }
-    };
-
-    window.addEventListener('click', handleClick);
-    document.body.classList.add('no-scroll');
-
-    return () => {
-      window.removeEventListener('click', handleClick);
-      document.body.classList.remove('no-scroll');
-    };
-  }, [closeMenu]);
+  useCloseModal(closeMenu);
 
   return (
     <div className={classes.backdrop}>

@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import PropTypes from 'prop-types';
 
 import FilterMenu from 'components/FilterMenu';
+
+import { getButtonText } from 'utils';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -21,7 +24,7 @@ const swiperOptions = {
   },
 };
 
-const Filters = () => {
+const Filters = ({ currentFilters = [], setFilters, removeFilter }) => {
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
   const showFilterMenu = () => setIsFilterMenuOpen(true);
@@ -39,27 +42,30 @@ const Filters = () => {
           </button>
         </SwiperSlide>
 
-        <SwiperSlide className={classes.slide}>
-          <button className={classes.selection} type="button">
-            В наявності
-            <svg width="15px" height="15px" stroke="black">
-              <use href={sprite + '#icon-cross'}></use>
-            </svg>
-          </button>
-        </SwiperSlide>
-        <SwiperSlide className={classes.slide}>
-          <button className={classes.selection} type="button">
-            Виробник: Anex
-            <svg width="15px" height="15px" stroke="black">
-              <use href={sprite + '#icon-cross'}></use>
-            </svg>
-          </button>
-        </SwiperSlide>
+        {currentFilters.map((filter, index) => (
+          <SwiperSlide className={classes.slide} key={index}>
+            <button
+              className={classes.selection}
+              type="button"
+              onClick={() => removeFilter(filter)}
+            >
+              {getButtonText(filter)}
+              <svg width="15px" height="15px" stroke="black">
+                <use href={sprite + '#icon-cross'}></use>
+              </svg>
+            </button>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
-      {isFilterMenuOpen && <FilterMenu closeMenu={hideFilterMenu} />}
+      {isFilterMenuOpen && <FilterMenu setFilters={setFilters} closeMenu={hideFilterMenu} />}
     </>
   );
+};
+
+Filters.propTypes = {
+  currentFilters: PropTypes.arrayOf(PropTypes.object),
+  setFilters: PropTypes.func.isRequired,
 };
 
 export default Filters;

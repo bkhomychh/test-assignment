@@ -1,0 +1,32 @@
+.range {
+  margin-bottom: 27px;
+  padding: 14px 0;
+}
+
+.range > :global(.rc-slider-rail),
+.range > :global(.rc-slider-track) {
+  top: 50%;
+
+  height: 5px;
+
+  border-radius: 5px;
+  transform: translateY(-50%);
+}
+
+.range > :global(.rc-slider-rail) {
+  background-color: #e1e1e1;
+}
+
+.range > :global(.rc-slider-track) {
+  background-color: var(--color-accent);
+}
+
+.range > :global(.rc-slider-handle) {
+  margin-top: -14px;
+  width: 28px;
+  height: 28px;
+
+  background-color: var(--color-bg-primary);
+  border: 2px solid var(--color-accent);
+  opacity: 1;
+}
