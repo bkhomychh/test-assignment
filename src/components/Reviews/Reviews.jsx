@@ -7,7 +7,7 @@ import { getRandomStarNumber } from 'utils';
 import classes from './Reviews.module.css';
 import sprite from 'images/sprite.svg';
 
-const Reviews = ({ reviews = [] }) => {
+const Reviews = ({ reviews = [], rate = 0 }) => {
   return (
     <section className={classes.section}>
       <div className={classes.box}>
@@ -17,7 +17,7 @@ const Reviews = ({ reviews = [] }) => {
         <p className={classes.rate}>
           Рейтинг:
           <span className={classes.number}>
-            {4.5}
+            {rate}
             <svg width="18px" height="18px">
               <use href={sprite + '#icon-star'}></use>
             </svg>
@@ -58,6 +58,7 @@ const Reviews = ({ reviews = [] }) => {
 };
 
 Reviews.propTypes = {
+  rate: PropTypes.number,
   reviews: PropTypes.arrayOf(PropTypes.object),
 };
 

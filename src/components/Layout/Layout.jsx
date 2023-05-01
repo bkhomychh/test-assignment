@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from 'components/Header';
 import Main from 'components/Main';
 import Footer from 'components/Footer';
+import Spinner from 'components/Spinner';
 
 import classes from './Layout.module.css';
 
@@ -12,7 +13,7 @@ const Layout = () => {
     <div className={classes.wrapper}>
       <Header />
       <Main>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>
       </Main>

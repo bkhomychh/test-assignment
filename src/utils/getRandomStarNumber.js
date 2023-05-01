@@ -1,3 +1,3 @@
 export const getRandomStarNumber = () => {
-  return Math.floor(Math.random() * 4 + 1);
+  return Math.floor(Math.random() * 2 + 3);
 };

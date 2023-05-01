@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux/es/exports';
+import { selectCart } from 'redux/cart';
+import { selectFavorite } from 'redux/favorite';
+import { selectComparison } from 'redux/comparison';
 
 import classes from './Header.module.css';
 import sprite from 'images/sprite.svg';
@@ -7,6 +11,9 @@ import Menu from 'components/Menu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cart = useSelector(selectCart);
+  const favoriteItems = useSelector(selectFavorite);
+  const comparedItems = useSelector(selectComparison);
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
@@ -52,7 +59,7 @@ const Header = () => {
                 <svg width="30px" height="20px">
                   <use href={sprite + '#icon-comparison'}></use>
                 </svg>
-                <span className={classes.number}>0</span>
+                <span className={classes.number}>{comparedItems.length}</span>
               </button>
             </li>
             <li>
@@ -60,7 +67,7 @@ const Header = () => {
                 <svg width="24px" height="20px">
                   <use href={sprite + '#icon-favorite'}></use>
                 </svg>
-                <span className={classes.number}>0</span>
+                <span className={classes.number}>{favoriteItems.length}</span>
               </button>
             </li>
             <li>
@@ -68,7 +75,7 @@ const Header = () => {
                 <svg width="27px" height="20px">
                   <use href={sprite + '#icon-cart'}></use>
                 </svg>
-                <span className={classes.number}>1</span>
+                <span className={classes.number}>{cart?.length}</span>
               </button>
             </li>
           </ul>

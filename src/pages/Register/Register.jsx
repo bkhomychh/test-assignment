@@ -1,13 +1,16 @@
-import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux/es/exports';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import InputField from 'components/InputField';
 
 import classes from 'styles/Form.module.css';
 import { phoneRegExp } from 'utils/constants';
+import { register } from 'redux/auth';
 
 const Register = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: { name: '', phone: '', email: '', password: '' },
     validationSchema: Yup.object({
@@ -20,8 +23,7 @@ const Register = () => {
       password: Yup.string().min(7, 'Від 7 символів').required('Обов`язкове поле'),
     }),
     onSubmit: (values, { resetForm }) => {
-      console.log(JSON.stringify(values, null, 2));
-      resetForm();
+      dispatch(register(values));
     },
   });
 

@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useCloseModal } from 'hooks';
+import { useDispatch } from 'react-redux/es/exports';
+import { logOut } from 'redux/auth';
 
 import classes from './Menu.module.css';
 import sprite from 'images/sprite.svg';
 
 const Menu = ({ closeMenu }) => {
+  const dispatch = useDispatch();
   useCloseModal(closeMenu);
 
   return (
@@ -83,12 +86,12 @@ const Menu = ({ closeMenu }) => {
             </li>
           </ul>
 
-          <Link className={classes.loginBtn} to="/">
+          <button className={classes.loginBtn} onClick={() => dispatch(logOut())}>
             <svg width="22px" height="21px">
               <use href={sprite + '#icon-user'}></use>
             </svg>
-            Вхід
-          </Link>
+            Вихід
+          </button>
         </div>
 
         <button className={classes.closeBtn} type="button" onClick={closeMenu}>

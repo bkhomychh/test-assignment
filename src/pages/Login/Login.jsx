@@ -1,11 +1,13 @@
-import { useFormik } from 'formik';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux/es/exports';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import InputField from 'components/InputField';
 
 import classes from 'styles/Form.module.css';
 import { phoneRegExp } from 'utils/constants';
+import { logIn } from 'redux/auth';
 
 Yup.addMethod(Yup.MixedSchema, 'oneOfSchemas', function (schemas) {
   return this.test('one-of-schemas', 'Введено невірні дані', item =>
@@ -14,6 +16,7 @@ Yup.addMethod(Yup.MixedSchema, 'oneOfSchemas', function (schemas) {
 });
 
 const Login = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: { login: '', password: '' },
     validationSchema: Yup.object({
@@ -23,8 +26,7 @@ const Login = () => {
       password: Yup.string().min(7, 'Від 7 символів').required('Обов`язкове поле'),
     }),
     onSubmit: (values, { resetForm }) => {
-      console.log(JSON.stringify(values, null, 2));
-      resetForm();
+      dispatch(logIn(values));
     },
   });
 

@@ -20,6 +20,11 @@ import classes from './ProductDetails.module.css';
 import sprite from 'images/sprite.svg';
 import items from 'data/items.json';
 
+import * as cart from 'redux/cart';
+import * as favorite from 'redux/favorite';
+import * as comparison from 'redux/comparison';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+
 const thumbsOptions = {
   spaceBetween: 10,
   slidesPerView: 'auto',
@@ -64,6 +69,9 @@ const ProductDetails = () => {
   const { id } = useParams();
   const thumbsSwiper = useRef(null);
   const location = useLocation();
+  const dispatch = useDispatch();
+  const favoriteItems = useSelector(favorite.selectFavorite);
+  const comparedItems = useSelector(comparison.selectComparison);
 
   useEffect(() => {
     const data = items.find(el => +el.id === +id);
@@ -76,6 +84,9 @@ const ProductDetails = () => {
   const { title, img, imgL, rate, available, code, price, newPrice, discount } = item || {};
   const thumbsSlides = new Array(7).fill(img);
   const swiperSlides = new Array(7).fill(imgL);
+
+  const isFavorite = favoriteItems.some(el => el.id === id);
+  const isCompared = comparedItems.some(el => el.id === id);
 
   return (
     <>
@@ -92,15 +103,29 @@ const ProductDetails = () => {
         <h1 className={classes.title}>{title}</h1>
         <ul className={classes.actions}>
           <li>
-            <button className={classes.favoriteBtn} type="button">
+            <button
+              className={classes.favoriteBtn}
+              type="button"
+              onClick={() => {
+                if (isFavorite) dispatch(favorite.deleteItem(id));
+                else dispatch(favorite.addItem({ id, title }));
+              }}
+            >
               <svg width="23px" height="19px">
                 <use href={sprite + '#icon-favorite'}></use>
               </svg>
-              У вибране
+              {isFavorite ? 'З вибраного' : 'У вибране'}
             </button>
           </li>
           <li>
-            <button className={classes.comparisonBtn} type="button">
+            <button
+              className={classes.comparisonBtn}
+              type="button"
+              onClick={() => {
+                if (isCompared) dispatch(comparison.deleteItem(id));
+                else dispatch(comparison.addItem({ id, title }));
+              }}
+            >
               <svg width="29px" height="19px">
                 <use href={sprite + '#icon-comparison'}></use>
               </svg>
@@ -225,7 +250,14 @@ const ProductDetails = () => {
 
             <ul className={classes.shopping}>
               <li>
-                <Button type="button" disabled={!available} colored large rounded>
+                <Button
+                  type="button"
+                  disabled={!available}
+                  colored
+                  large
+                  rounded
+                  onClick={() => dispatch(cart.addItem({ id, title }))}
+                >
                   <svg width="23px" height="17px">
                     <use href={sprite + '#icon-cart'}></use>
                   </svg>
@@ -233,7 +265,13 @@ const ProductDetails = () => {
                 </Button>
               </li>
               <li>
-                <Button type="button" disabled={!available} large rounded>
+                <Button
+                  type="button"
+                  disabled={!available}
+                  large
+                  rounded
+                  onClick={() => dispatch(cart.addItem({ id, title }))}
+                >
                   Купити в 1 клік
                 </Button>
               </li>
@@ -273,7 +311,7 @@ const ProductDetails = () => {
         <div className="container">
           <Description />
           <Characteristics />
-          <Reviews reviews={reviews} />
+          <Reviews reviews={reviews} rate={rate} />
         </div>
       </div>
 
