@@ -23,15 +23,11 @@ const Header = () => {
   const getClasses = number => {
     const classList = [classes.number];
 
-    console.log(number > 0);
-
     if (number > 0) {
       classList.push(classes.active);
     } else if (!matches) {
       classList.push(classes.hidden);
     }
-
-    console.log(classList);
 
     return classList.join(' ');
   };

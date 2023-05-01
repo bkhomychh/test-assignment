@@ -140,14 +140,6 @@
   .reviews {
     column-count: 2;
     column-gap: 30px;
-
-    /* height: 900px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    grid-auto-rows: auto;
-    grid-auto-flow: dense; */
   }
 
   .review:not(:last-child) {

@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 
@@ -31,7 +31,6 @@ const ProductDetails = () => {
   const [isMessageShown, setIsMessageShown] = useState(false);
 
   const { id } = useParams();
-  const location = useLocation();
   const dispatch = useDispatch();
   const favoriteItems = useSelector(favorite.selectFavorite);
   const comparedItems = useSelector(comparison.selectComparison);
@@ -61,7 +60,7 @@ const ProductDetails = () => {
           <BackLink classNames={[classes.link]} to="/">
             Головна &gt;
           </BackLink>
-          <BackLink classNames={[classes.link]} to={location.state?.from || '/'}>
+          <BackLink classNames={[classes.link]} to="/catalog">
             Дитячі коляски &gt;
           </BackLink>
         </div>
