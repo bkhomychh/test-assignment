@@ -40,21 +40,29 @@ const Menu = ({ closeMenu }) => {
           </a>
           <ul className={classes.socials}>
             <li>
-              <a href="/" target="_blank" rel="noopener noreferrer nofollow">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 <svg width="20px" height="20px">
                   <use href={sprite + '#icon-instagram'}></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="/" target="_blank" rel="noopener noreferrer nofollow">
+              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer nofollow">
                 <svg width="23px" height="16px">
                   <use href={sprite + '#icon-youtube'}></use>
                 </svg>
               </a>
             </li>
             <li>
-              <a href="/" target="_blank" rel="noopener noreferrer nofollow">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 <svg width="11px" height="19px">
                   <use href={sprite + '#icon-facebook'}></use>
                 </svg>

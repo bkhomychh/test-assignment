@@ -1,11 +1,11 @@
-.wrapper {
-  margin-bottom: 104px;
-  padding-top: 30px;
-}
-
 .box {
+  padding-top: 30px;
   display: flex;
   gap: 4px;
+}
+
+.mainInfo {
+  margin-bottom: 104px;
 }
 
 .title {
@@ -108,6 +108,10 @@
   color: var(--color-text-primary);
 }
 
+.tab {
+  display: none;
+}
+
 .prevBtn,
 .nextBtn {
   position: absolute;
@@ -183,8 +187,8 @@
 }
 
 .swiperSlide img {
-  width: 100%;
   max-height: 541px;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -379,6 +383,14 @@
   color: var(--color-text-primary);
 }
 
+.additionalInfo {
+  margin-bottom: 60px;
+  padding: 60px 0;
+  min-width: 360px;
+
+  background-color: var(--color-bg-primary-hover);
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     margin-bottom: 76px;
@@ -395,12 +407,22 @@
     font-size: var(--font-size-s);
   }
 
+  .mob {
+    display: none;
+  }
+
+  .tab {
+    display: inline;
+  }
+
   .available,
   .code {
     margin-right: 20px;
   }
 
   .rate {
+    margin-right: 10px;
+
     font-size: var(--font-size-xxl);
   }
 
@@ -469,10 +491,25 @@
   .links {
     flex-direction: row;
   }
+
+  .additionalInfo {
+    margin-bottom: 80px;
+    padding: 80px 0;
+  }
 }
 
 @media screen and (min-width: 1000px) {
-  .wrapper {
+  .mainInfo {
     margin-bottom: 82px;
+    display: flex;
+    column-gap: 30px;
+  }
+
+  .images {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .images + div {
+    width: calc((100% - 30px) / 2);
   }
 }

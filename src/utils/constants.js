@@ -7,3 +7,5 @@ export const SORTING_OPTIONS = {
   cheap: 'Дешевші',
   expensive: 'Дорожчі',
 };
+
+export const BASE_URL = 'https://jsonplaceholder.typicode.com/';

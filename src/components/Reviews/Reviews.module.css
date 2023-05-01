@@ -1,0 +1,156 @@
+.section {
+}
+
+.box {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  line-height: calc(20 / 18);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  font-size: var(--font-size-m);
+  font-weight: 500;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
+
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.box + button {
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.reviews {
+  margin-bottom: 30px;
+}
+
+.review {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-size: var(--font-size-s);
+  font-weight: 400;
+  background-color: var(--color-bg-primary);
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.review:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.date {
+  font-weight: 300;
+  color: var(--color-border);
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.stars {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+
+  color: var(--color-accent);
+}
+
+.stars > li {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-weight: 300;
+  line-height: calc(25 / 15);
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.images > li {
+  width: 79px;
+  height: 78px;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.link {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: var(--font-size-s);
+  line-height: calc(17 / 15);
+  text-decoration-line: underline;
+  color: var(--color-accent);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-accent-hover);
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+
+  .rate {
+    font-size: var(--font-size-l);
+  }
+
+  .number {
+    font-size: var(--font-size-xxl);
+  }
+
+  .reviews {
+    column-count: 2;
+    column-gap: 30px;
+
+    /* height: 900px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense; */
+  }
+
+  .review:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

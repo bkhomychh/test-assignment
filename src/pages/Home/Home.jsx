@@ -8,6 +8,8 @@ import PopularCategories from 'components/PopularCategories';
 import classes from './Home.module.css';
 import items from 'data/items.json';
 
+const filteredItems = items.filter(item => item.discount !== '');
+
 const Home = () => {
   return (
     <div className={classes.wrapper}>
@@ -15,7 +17,7 @@ const Home = () => {
         <Slider />
       </Section>
       <Section title="Акція!" label="Sale" to="/">
-        <Carousel items={items} navigation />
+        <Carousel items={filteredItems} navigation />
       </Section>
       <Section title="Популярні категорії">
         <PopularCategories />

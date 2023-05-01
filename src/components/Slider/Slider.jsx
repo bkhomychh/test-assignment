@@ -17,7 +17,7 @@ const slide = {
   slideL,
 };
 
-const slides = [slide, slide, slide];
+const slides = new Array(3).fill(slide);
 
 const swiperOptions = {
   slidesPerView: 1,
