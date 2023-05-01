@@ -1,14 +1,11 @@
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
-import { Navigation, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
 
 import Button from 'components/Button';
 import BackLink from 'components/BackLink';
 import Section from 'components/Section';
+import MetaCarousel from 'components/MetaCarousel';
 import Carousel from 'components/Carousel';
 import Description from 'components/Description';
 import Characteristics from 'components/Сharacteristics';
@@ -16,58 +13,22 @@ import Reviews from 'components/Reviews';
 import ViewedItems from 'components/ViewedItems';
 
 import { getItemReviews } from 'services';
-import classes from './ProductDetails.module.css';
-import sprite from 'images/sprite.svg';
-import items from 'data/items.json';
-
+import { COLOR, GENDER } from 'utils';
 import * as cart from 'redux/cart';
 import * as favorite from 'redux/favorite';
 import * as comparison from 'redux/comparison';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
 
-const thumbsOptions = {
-  spaceBetween: 10,
-  slidesPerView: 'auto',
-  speed: 750,
-  loop: true,
-  direction: 'vertical',
-  slideClass: classes.thumbsSlide,
-
-  modules: [Thumbs],
-  watchSlidesProgress: true,
-};
-
-const swiperOptions = {
-  slidesPerView: 1,
-  speed: 750,
-  loop: true,
-  slideClass: classes.swiperSlide,
-  navigation: {
-    prevEl: `.${classes.prevBtn}`,
-    nextEl: `.${classes.nextBtn}`,
-  },
-
-  modules: [Navigation, Thumbs],
-};
-
-const COLOR = {
-  blue: 'blue',
-  red: 'red',
-  green: 'green',
-};
-
-const GENDER = {
-  boy: 'boy',
-  girl: 'girl',
-};
+import classes from './ProductDetails.module.css';
+import sprite from 'images/sprite.svg';
+import items from 'data/items.json';
 
 const ProductDetails = () => {
   const [item, setItem] = useState(null);
   const [color, setColor] = useState(COLOR.blue);
   const [gender, setGender] = useState(GENDER.boy);
   const [reviews, setReviews] = useState([]);
+
   const { id } = useParams();
-  const thumbsSwiper = useRef(null);
   const location = useLocation();
   const dispatch = useDispatch();
   const favoriteItems = useSelector(favorite.selectFavorite);
@@ -82,8 +43,6 @@ const ProductDetails = () => {
   }, [id]);
 
   const { title, img, imgL, rate, available, code, price, newPrice, discount } = item || {};
-  const thumbsSlides = new Array(7).fill(img);
-  const swiperSlides = new Array(7).fill(imgL);
 
   const isFavorite = favoriteItems.some(el => el.id === id);
   const isCompared = comparedItems.some(el => el.id === id);
@@ -154,42 +113,7 @@ const ProductDetails = () => {
         </div>
 
         <div className={classes.mainInfo}>
-          <div className={classes.images}>
-            <Swiper className={classes.thumbsSwiper} ref={thumbsSwiper} {...thumbsOptions}>
-              {thumbsSlides.map((img, index) => (
-                <SwiperSlide className={classes.thumbsSlide} key={index}>
-                  <img src={img} alt="Item" data-number={index} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            {thumbsSwiper.current?.swiper && (
-              <Swiper
-                className={classes.swiper}
-                {...swiperOptions}
-                thumbs={{
-                  swiper: thumbsSwiper.current,
-                }}
-              >
-                {swiperSlides.map((img, index) => (
-                  <SwiperSlide className={classes.swiperSlide} key={index}>
-                    <img src={img} alt="Item" data-number={index} />
-                  </SwiperSlide>
-                ))}
-
-                <button className={classes.prevBtn} type="button">
-                  <svg width="20px" height="20px">
-                    <use href={sprite + '#icon-arrow-left'}></use>
-                  </svg>
-                </button>
-                <button className={classes.nextBtn} type="button">
-                  <svg width="20px" height="20px">
-                    <use href={sprite + '#icon-arrow-right'}></use>
-                  </svg>
-                </button>
-              </Swiper>
-            )}
-          </div>
+          <MetaCarousel img={img} imgL={imgL} />
 
           <div>
             <span className={classes.label}>Колір: </span>

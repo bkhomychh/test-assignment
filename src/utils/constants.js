@@ -9,3 +9,14 @@ export const SORTING_OPTIONS = {
 };
 
 export const BASE_URL = 'https://jsonplaceholder.typicode.com/';
+
+export const COLOR = {
+  blue: 'blue',
+  red: 'red',
+  green: 'green',
+};
+
+export const GENDER = {
+  boy: 'boy',
+  girl: 'girl',
+};
