@@ -79,13 +79,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15px;
-  height: 15px;
 
   font-size: 12px;
   font-weight: 700;
-  background-color: var(--color-bg-info);
+  line-height: 1;
+  background-color: transparent;
   border-radius: 50%;
+}
+
+.number.active {
+  width: 15px;
+  height: 15px;
+
+  background-color: var(--color-bg-info);
+}
+
+.number.hidden {
+  opacity: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -117,9 +127,11 @@
   .number {
     position: static;
 
+    font-size: var(--font-size-s);
+  }
+
+  .number.active {
     width: 21px;
     height: 21px;
-
-    font-size: var(--font-size-s);
   }
 }

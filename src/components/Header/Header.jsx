@@ -8,15 +8,33 @@ import { selectComparison } from 'redux/comparison';
 import classes from './Header.module.css';
 import sprite from 'images/sprite.svg';
 import Menu from 'components/Menu';
+import { useMediaQuery } from 'hooks';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cart = useSelector(selectCart);
   const favoriteItems = useSelector(selectFavorite);
   const comparedItems = useSelector(selectComparison);
+  const matches = useMediaQuery('768px');
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
+
+  const getClasses = number => {
+    const classList = [classes.number];
+
+    console.log(number > 0);
+
+    if (number > 0) {
+      classList.push(classes.active);
+    } else if (!matches) {
+      classList.push(classes.hidden);
+    }
+
+    console.log(classList);
+
+    return classList.join(' ');
+  };
 
   return (
     <>
@@ -59,7 +77,7 @@ const Header = () => {
                 <svg width="30px" height="20px">
                   <use href={sprite + '#icon-comparison'}></use>
                 </svg>
-                <span className={classes.number}>{comparedItems.length}</span>
+                <span className={getClasses(comparedItems.length)}>{comparedItems.length}</span>
               </button>
             </li>
             <li>
@@ -67,7 +85,7 @@ const Header = () => {
                 <svg width="24px" height="20px">
                   <use href={sprite + '#icon-favorite'}></use>
                 </svg>
-                <span className={classes.number}>{favoriteItems.length}</span>
+                <span className={getClasses(favoriteItems.length)}>{favoriteItems.length}</span>
               </button>
             </li>
             <li>
@@ -75,7 +93,7 @@ const Header = () => {
                 <svg width="27px" height="20px">
                   <use href={sprite + '#icon-cart'}></use>
                 </svg>
-                <span className={classes.number}>{cart?.length}</span>
+                <span className={getClasses(cart.length)}>{cart.length}</span>
               </button>
             </li>
           </ul>

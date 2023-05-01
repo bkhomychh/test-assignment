@@ -21,12 +21,14 @@ import * as comparison from 'redux/comparison';
 import classes from './ProductDetails.module.css';
 import sprite from 'images/sprite.svg';
 import items from 'data/items.json';
+import Message from 'components/Message';
 
 const ProductDetails = () => {
   const [item, setItem] = useState(null);
   const [color, setColor] = useState(COLOR.blue);
   const [gender, setGender] = useState(GENDER.boy);
   const [reviews, setReviews] = useState([]);
+  const [isMessageShown, setIsMessageShown] = useState(false);
 
   const { id } = useParams();
   const location = useLocation();
@@ -46,6 +48,11 @@ const ProductDetails = () => {
 
   const isFavorite = favoriteItems.some(el => el.id === id);
   const isCompared = comparedItems.some(el => el.id === id);
+
+  const addToCart = () => {
+    dispatch(cart.addItem({ id, title }));
+    setIsMessageShown(true);
+  };
 
   return (
     <>
@@ -180,7 +187,7 @@ const ProductDetails = () => {
                   colored
                   large
                   rounded
-                  onClick={() => dispatch(cart.addItem({ id, title }))}
+                  onClick={addToCart}
                 >
                   <svg width="23px" height="17px">
                     <use href={sprite + '#icon-cart'}></use>
@@ -189,17 +196,13 @@ const ProductDetails = () => {
                 </Button>
               </li>
               <li>
-                <Button
-                  type="button"
-                  disabled={!available}
-                  large
-                  rounded
-                  onClick={() => dispatch(cart.addItem({ id, title }))}
-                >
+                <Button type="button" disabled={!available} large rounded onClick={addToCart}>
                   Купити в 1 клік
                 </Button>
               </li>
             </ul>
+
+            {isMessageShown && <Message close={() => setIsMessageShown(false)} />}
 
             <div className={classes.call}>
               <b>Ви з Одеси? Заберіть товар у магазині</b>
