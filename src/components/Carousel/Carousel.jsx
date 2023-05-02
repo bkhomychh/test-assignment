@@ -34,28 +34,30 @@ const swiperOptions = {
 
 const Carousel = ({ items, navigation }) => {
   return (
-    <Swiper {...swiperOptions}>
-      {items.map((item, index) => (
-        <SwiperSlide className={classes.slide} key={index}>
-          <Card {...item} />
-        </SwiperSlide>
-      ))}
+    <div className={classes.wrapper}>
+      <Swiper {...swiperOptions}>
+        {items.map((item, index) => (
+          <SwiperSlide className={classes.slide} key={index}>
+            <Card {...item} />
+          </SwiperSlide>
+        ))}
 
-      {navigation && (
-        <>
-          <button className={classes.prevBtn} type="button">
-            <svg width="20px" height="20px">
-              <use href={sprite + '#icon-arrow-left'}></use>
-            </svg>
-          </button>
-          <button className={classes.nextBtn} type="button">
-            <svg width="20px" height="20px">
-              <use href={sprite + '#icon-arrow-right'}></use>
-            </svg>
-          </button>
-        </>
-      )}
-    </Swiper>
+        {navigation && (
+          <>
+            <button className={classes.prevBtn} type="button">
+              <svg width="20px" height="20px">
+                <use href={sprite + '#icon-arrow-left'}></use>
+              </svg>
+            </button>
+            <button className={classes.nextBtn} type="button">
+              <svg width="20px" height="20px">
+                <use href={sprite + '#icon-arrow-right'}></use>
+              </svg>
+            </button>
+          </>
+        )}
+      </Swiper>
+    </div>
   );
 };
 

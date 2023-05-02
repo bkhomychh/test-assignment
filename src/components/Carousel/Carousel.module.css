@@ -1,3 +1,8 @@
+.wrapper :global(.swiper) {
+  overflow: visible;
+  overflow-x: clip;
+}
+
 .slide {
   width: 156px;
 }

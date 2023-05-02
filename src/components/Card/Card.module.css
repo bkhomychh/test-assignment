@@ -1,7 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .card {
+  margin-bottom: 13px;
   display: flex;
   flex-direction: column;
   gap: 13px;
+  flex-grow: 1;
 }
 
 .thumb {
@@ -72,6 +79,49 @@
   text-decoration-line: line-through;
 
   color: var(--color-text-primary);
+}
+
+.footer {
+  position: relative;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  z-index: 50;
+
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  width: 100%;
+
+  background-color: var(--color-bg-primary);
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+  pointer-events: none;
+}
+
+.wrapper:hover .actions {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.action button svg {
+  color: var(--color-accent);
+}
+
+.action button:hover svg,
+.action button:focus svg {
+  color: var(--color-accent-hover);
+}
+
+.notice {
+  font-weight: 400;
+  font-size: var(--font-size-s);
+  line-height: calc(17 / 15);
+
+  color: var(--color-danger);
 }
 
 @media screen and (min-width: 768px) {

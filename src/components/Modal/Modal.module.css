@@ -6,15 +6,14 @@
   right: 0;
   z-index: 1200;
 
-  padding: 150px;
-  display: flex;
-  justify-content: center;
   background-color: rgba(0, 0, 0, 0.1);
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .modal {
-  width: max-content;
-  height: max-content;
-  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+
+  transform: translate(-50%, 0);
 }

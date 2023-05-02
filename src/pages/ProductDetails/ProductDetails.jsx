@@ -49,7 +49,7 @@ const ProductDetails = () => {
   const isCompared = comparedItems.some(el => el.id === id);
 
   const addToCart = () => {
-    dispatch(cart.addItem({ id, title }));
+    dispatch(cart.addItem({ id, title, color, gender }));
     setIsMessageShown(true);
   };
 
