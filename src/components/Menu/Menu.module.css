@@ -16,18 +16,20 @@
   max-width: 266px;
 }
 
-.wrapper:first-child {
-  padding: 30px 16px;
-  min-height: 100%;
-
+.mainMenu {
   color: var(--color-text-secondary);
   background-color: var(--color-accent);
 }
 
-.wrapper {
+.mainMenu,
+.catalogMenu,
+.categoryMenu {
   padding: 30px 16px;
-  min-height: 100%;
+  min-height: 100vh;
+}
 
+.catalogMenu,
+.categoryMenu {
   color: var(--color-text-primary);
   background-color: var(--color-text-secondary);
 }

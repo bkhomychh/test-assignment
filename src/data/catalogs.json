@@ -1,0 +1,52 @@
+[
+	{
+		"id": 1,
+		"name": "Дитячі коляски",
+		"shorthand": "carriage"
+	},
+	{
+		"id": 2,
+		"name": "Дитяча кімната",
+		"shorthand": "room"
+	},
+	{
+		"id": 3,
+		"name": "Стільці і шезлонги",
+		"shorthand": "chair"
+	},
+	{
+		"id": 4,
+		"name": "Для годування",
+		"shorthand": "feeding"
+	},
+	{
+		"id": 5,
+		"name": "Гігієна і догляд",
+		"shorthand": "soap"
+	},
+	{
+		"id": 6,
+		"name": "Автокрісла",
+		"shorthand": "autochair"
+	},
+	{
+		"id": 7,
+		"name": "Дитячий транспорт",
+		"shorthand": "car"
+	},
+	{
+		"id": 8,
+		"name": "Іграшки",
+		"shorthand": "toy"
+	},
+	{
+		"id": 9,
+		"name": "Одяг",
+		"shorthand": "clothes"
+	},
+	{
+		"id": 10,
+		"name": "Новий товар",
+		"shorthand": "new"
+	}
+]

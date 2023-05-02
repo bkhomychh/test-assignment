@@ -1,10 +1,10 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  /* gap: 13px; */
 }
 
 .card {
-  margin-bottom: 13px;
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -90,7 +90,7 @@
   top: 0;
   z-index: 50;
 
-  padding-bottom: 15px;
+  padding: 13px 0;
   display: flex;
   align-items: center;
   column-gap: 15px;
@@ -117,6 +117,8 @@
 }
 
 .notice {
+  padding-top: 13px;
+
   font-weight: 400;
   font-size: var(--font-size-s);
   line-height: calc(17 / 15);

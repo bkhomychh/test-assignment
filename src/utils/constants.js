@@ -20,3 +20,9 @@ export const GENDER = {
   boy: 'boy',
   girl: 'girl',
 };
+
+export const MENU = {
+  main: 'main',
+  catalog: 'catalog',
+  category: 'category',
+};
