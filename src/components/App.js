@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './Layout';
 import AuthLayout from './AuthLayout';
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/login" element={<RestrictedRoute component={<Login />} />} />
           <Route path="/register" element={<RestrictedRoute component={<Register />} />} />
         </Route>
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
