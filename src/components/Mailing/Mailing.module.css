@@ -36,6 +36,14 @@
   border-radius: 10px;
 }
 
+.form input:focus {
+  border-color: var(--color-text-tertiary);
+}
+
+.form .invalid {
+  border-color: var(--color-danger);
+}
+
 .form button {
   padding: 14px;
   display: flex;

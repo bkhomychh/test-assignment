@@ -17,6 +17,9 @@
 }
 
 .advice {
+  margin-bottom: 20px;
+  display: block;
+
   font-weight: 700;
   font-size: var(--font-size-s);
   line-height: calc(17 / 15);
@@ -35,6 +38,10 @@
   height: 57px;
 
   border-radius: 10px;
+}
+
+.btn:first-of-type {
+  margin-bottom: 20px;
 }
 
 .btn {

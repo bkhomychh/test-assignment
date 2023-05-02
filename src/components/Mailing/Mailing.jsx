@@ -8,14 +8,14 @@ const Mailing = () => {
   const formik = useFormik({
     initialValues: { email: '' },
     validationSchema: Yup.object({
-      email: Yup.string().email('Must be a valid email').required('Required'),
+      email: Yup.string().email().required(),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log(JSON.stringify(values, null, 2));
       resetForm();
     },
   });
-  const { handleSubmit, handleChange, values, touched, errors } = formik;
+  const { handleSubmit, handleChange, values, errors } = formik;
 
   return (
     <div className={classes.wrapper}>
@@ -23,13 +23,13 @@ const Mailing = () => {
         <b className={classes.call}>Отримуйте промокоди та ексклюзивні пропозиції</b>
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <input
+            className={errors.email ? classes.invalid : ''}
             type="email"
             name="email"
             placeholder="Ваш email"
             value={values.email}
             onChange={handleChange}
           />
-          {touched.email && errors.email && <p className={classes.error}>{errors.email}</p>}
           <button type="submit">
             <svg width="20px" height="20px">
               <use href={sprite + '#icon-arrow-right'}></use>
