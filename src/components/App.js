@@ -15,20 +15,18 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/">
-          <Route element={<Layout />}>
-            <Route index element={<PrivateRoute component={<Home />} />} />
-            <Route path="catalog" element={<PrivateRoute component={<Catalog />} />} />
-            <Route path="catalog/:id" element={<PrivateRoute component={<ProductDetails />} />} />
-          </Route>
-
-          <Route element={<AuthLayout />}>
-            <Route path="login" element={<RestrictedRoute component={<Login />} />} />
-            <Route path="register" element={<RestrictedRoute component={<Register />} />} />
-          </Route>
-
-          <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<PrivateRoute component={<Home />} />} />
+          <Route path="catalog" element={<PrivateRoute component={<Catalog />} />} />
+          <Route path="catalog/:id" element={<PrivateRoute component={<ProductDetails />} />} />
         </Route>
+
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<RestrictedRoute component={<Login />} />} />
+          <Route path="/register" element={<RestrictedRoute component={<Register />} />} />
+        </Route>
+
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
