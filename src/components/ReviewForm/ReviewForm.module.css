@@ -1,0 +1,78 @@
+.wrapper {
+  padding: 30px 20px;
+  max-width: 360px;
+
+  background-color: var(--color-bg-primary);
+}
+
+.wrapper button {
+  width: 100%;
+}
+
+.file {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  text-decoration-line: underline;
+  color: var(--color-accent);
+}
+
+.file:hover,
+.file:focus-within {
+  color: var(--color-accent-hover);
+}
+
+.previews {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 23px;
+}
+
+.previews img {
+  width: 79px;
+  height: 78px;
+
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.rate {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  column-gap: 13px;
+
+  font-size: var(--font-size-m);
+  font-weight: 500;
+}
+
+.btnList {
+  display: flex;
+}
+
+.btn {
+  display: flex;
+  padding: 2px;
+}
+
+.btn svg {
+  fill: none;
+  stroke: var(--color-border);
+  transition: all 250ms ease-in-out;
+}
+
+.btn:hover svg,
+.btn:focus svg,
+svg.colored {
+  fill: var(--color-accent);
+  stroke: none;
+}

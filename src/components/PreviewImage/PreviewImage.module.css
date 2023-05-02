@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+}
+
+.wrapper .btn {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+
+  padding: 7px;
+  display: flex;
+  width: auto;
+
+  color: var(--color-text-secondary);
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-accent-hover);
+}

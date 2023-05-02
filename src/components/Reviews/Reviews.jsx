@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
-import { getRandomStarNumber } from 'utils';
+import ReviewForm from 'components/ReviewForm';
+import Modal from 'components/Modal';
 
+import { getRandomStarNumber } from 'utils';
 import classes from './Reviews.module.css';
 import sprite from 'images/sprite.svg';
 
 const Reviews = ({ reviews = [], rate = 0 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <section className={classes.section}>
       <div className={classes.box}>
@@ -25,9 +33,15 @@ const Reviews = ({ reviews = [], rate = 0 }) => {
         </p>
       </div>
 
-      <Button colored large rounded>
+      <Button colored large rounded onClick={openModal}>
         + Написати відгук
       </Button>
+
+      {isModalOpen && (
+        <Modal close={closeModal}>
+          <ReviewForm close={closeModal} />
+        </Modal>
+      )}
 
       <ul className={classes.reviews}>
         {reviews.map(({ id, email, body }) => (

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useCloseModal } from 'hooks';
 
 import Checkbox from 'components/Checkbox';
@@ -8,7 +9,6 @@ import Range from 'components/Range';
 
 import classes from './FilterMenu.module.css';
 import sprite from 'images/sprite.svg';
-
 import producers from 'data/producers.json';
 import categories from 'data/categories.json';
 
@@ -28,7 +28,11 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
       producer: [],
     },
 
-    onSubmit: (values, { resetForm }) => {
+    validationSchema: Yup.object({
+      price: Yup.array().of(Yup.number()),
+    }),
+
+    onSubmit: values => {
       const filters = [];
       const entries = Object.entries(values);
 
@@ -66,7 +70,7 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
     }
   };
 
-  const { handleSubmit, handleChange, values, setFieldValue } = formik;
+  const { handleSubmit, handleChange, values, errors, setFieldValue } = formik;
 
   return (
     <div className={classes.backdrop}>
@@ -133,7 +137,7 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
                 <Range value={values.price} onChange={val => setFieldValue('price', val)} />
                 <div className={classes.container}>
                   <input
-                    className={classes.input}
+                    className={`${classes.input} ${errors.price ? classes.invalid : ''}`}
                     type="text"
                     value={values.price[0]}
                     onChange={({ target }) =>
@@ -142,11 +146,11 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
                   />
                   <span>-</span>
                   <input
-                    className={classes.input}
+                    className={`${classes.input} ${errors.price ? classes.invalid : ''}`}
                     type="text"
                     value={values.price[1]}
                     onChange={({ target }) =>
-                      setFieldValue('price', [+values.price[0], +target.value])
+                      setFieldValue('price', [values.price[0], target.value])
                     }
                   />
                   <button type="submit">

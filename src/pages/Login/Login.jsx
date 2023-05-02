@@ -21,11 +21,14 @@ const Login = () => {
     initialValues: { login: '', password: '' },
     validationSchema: Yup.object({
       login: Yup.mixed()
-        .oneOfSchemas([Yup.string().email(), Yup.string().min(10).matches(phoneRegExp)])
+        .oneOfSchemas([
+          Yup.string().email('Невірна ел. адреса'),
+          Yup.string().min(10).matches(phoneRegExp),
+        ])
         .required('Обов`язкове поле'),
       password: Yup.string().min(7, 'Від 7 символів').required('Обов`язкове поле'),
     }),
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: values => {
       dispatch(logIn(values));
     },
   });

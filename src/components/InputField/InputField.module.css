@@ -1,7 +1,22 @@
 .box {
   position: relative;
+  display: flex;
 
   width: 100%;
+}
+
+.box:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.large {
+  margin-bottom: 30px;
+}
+
+.large textarea {
+  height: 110px;
+
+  resize: none;
 }
 
 .input {
@@ -12,10 +27,11 @@
   color: var(--color-text-tertiary);
   border: 1px solid var(--color-border);
   border-radius: 5px;
+  outline: none;
 }
 
 .input:focus {
-  border-color: var(--color-text-tertiary);
+  border: 1px solid var(--color-text-tertiary);
 }
 
 .invalid {
@@ -24,7 +40,7 @@
 
 .error {
   position: absolute;
-  top: 105%;
+  bottom: -20px;
 
   font-weight: 300;
   font-size: var(--font-size-xs);
