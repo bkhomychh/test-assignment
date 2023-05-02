@@ -66,6 +66,7 @@ const Filters = ({ currentFilters = [], setFilters, removeFilter }) => {
 Filters.propTypes = {
   currentFilters: PropTypes.arrayOf(PropTypes.object),
   setFilters: PropTypes.func.isRequired,
+  removeFilter: PropTypes.func.isRequired,
 };
 
 export default Filters;

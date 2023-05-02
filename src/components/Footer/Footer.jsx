@@ -7,6 +7,7 @@ import sprite from 'images/sprite.svg';
 import mastercardImg from 'images/footer/mastercard.jpg';
 import visaImg from 'images/footer/visa.jpg';
 import liqPayImg from 'images/footer/liqpay.jpg';
+import catalogs from 'data/catalogs.json';
 
 const Footer = () => {
   return (
@@ -76,36 +77,11 @@ const Footer = () => {
             <div>
               <h2 className={classes.title}>Каталог</h2>
               <ul className={classes.list}>
-                <li>
-                  <Link to="/">Дитячі коляски</Link>
-                </li>
-                <li>
-                  <Link to="/">Дитяча кімната</Link>
-                </li>
-                <li>
-                  <Link to="/">Стільці і шезлонги</Link>
-                </li>
-                <li>
-                  <Link to="/">Все для годування</Link>
-                </li>
-                <li>
-                  <Link to="/">Гігієна та догляд</Link>
-                </li>
-                <li>
-                  <Link to="/">Автокрісла</Link>
-                </li>
-                <li>
-                  <Link to="/">Дитячий транспорт</Link>
-                </li>
-                <li>
-                  <Link to="/">Іграшки</Link>
-                </li>
-                <li>
-                  <Link to="/">Дитячий одяг</Link>
-                </li>
-                <li>
-                  <Link to="/">Новий товар</Link>
-                </li>
+                {catalogs.map(({ id, name }) => (
+                  <li key={id}>
+                    <Link to="/">{name}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

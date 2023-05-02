@@ -7,7 +7,7 @@ const Message = ({ close }) => {
   return (
     <Modal close={close}>
       <div className={classes.wrapper}>
-        <p className={classes.text}> Товар додано до кошику</p>
+        <p className={classes.text}>Товар додано до кошику</p>
         <button className={classes.btn} onClick={close}>
           Продовжити покупки
         </button>

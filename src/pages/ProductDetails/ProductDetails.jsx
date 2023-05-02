@@ -1,11 +1,9 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 
-import Button from 'components/Button';
 import BackLink from 'components/BackLink';
 import Section from 'components/Section';
-import MetaCarousel from 'components/MetaCarousel';
 import Carousel from 'components/Carousel';
 import Description from 'components/Description';
 import Characteristics from 'components/Сharacteristics';
@@ -14,21 +12,19 @@ import ViewedItems from 'components/ViewedItems';
 
 import { getItemReviews } from 'services';
 import { COLOR, GENDER } from 'utils';
-import * as cart from 'redux/cart';
 import * as favorite from 'redux/favorite';
 import * as comparison from 'redux/comparison';
 
 import classes from './ProductDetails.module.css';
 import sprite from 'images/sprite.svg';
 import items from 'data/items.json';
-import Message from 'components/Message';
+import ItemInfo from 'components/ItemInfo';
 
 const ProductDetails = () => {
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState({});
   const [color, setColor] = useState(COLOR.blue);
   const [gender, setGender] = useState(GENDER.boy);
   const [reviews, setReviews] = useState([]);
-  const [isMessageShown, setIsMessageShown] = useState(false);
 
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -43,15 +39,10 @@ const ProductDetails = () => {
       .catch(err => console.log(err.message));
   }, [id]);
 
-  const { title, img, imgL, rate, available, code, price, newPrice, discount } = item || {};
+  const { title, rate, available, code } = item;
 
   const isFavorite = favoriteItems.some(el => el.id === id);
   const isCompared = comparedItems.some(el => el.id === id);
-
-  const addToCart = () => {
-    dispatch(cart.addItem({ id, title, color, gender }));
-    setIsMessageShown(true);
-  };
 
   return (
     <>
@@ -118,115 +109,15 @@ const ProductDetails = () => {
           </a>
         </div>
 
-        <div className={classes.mainInfo}>
-          <MetaCarousel img={img} imgL={imgL} />
-
-          <div>
-            <span className={classes.label}>Колір: </span>
-            <ul className={classes.list}>
-              <li>
-                <button
-                  className={`${classes.colorBtn} ${color === COLOR.blue ? classes.active : ''}`}
-                  type="button"
-                  data-color={COLOR.blue}
-                  onClick={() => setColor(COLOR.blue)}
-                ></button>
-              </li>
-              <li>
-                <button
-                  className={`${classes.colorBtn} ${color === COLOR.red ? classes.active : ''}`}
-                  type="button"
-                  data-color={COLOR.red}
-                  onClick={() => setColor(COLOR.red)}
-                ></button>
-              </li>
-              <li>
-                <button
-                  className={`${classes.colorBtn} ${color === COLOR.green ? classes.active : ''}`}
-                  type="button"
-                  data-color={COLOR.green}
-                  onClick={() => setColor(COLOR.green)}
-                ></button>
-              </li>
-            </ul>
-
-            <span className={classes.label}>Стать: </span>
-            <ul className={classes.list}>
-              <li>
-                <button
-                  className={`${classes.genderBtn} ${gender === GENDER.boy ? classes.active : ''}`}
-                  type="button"
-                  onClick={() => setGender(GENDER.boy)}
-                >
-                  Хлопчик
-                </button>
-              </li>
-              <li>
-                <button
-                  className={`${classes.genderBtn} ${gender === GENDER.girl ? classes.active : ''}`}
-                  type="button"
-                  onClick={() => setGender(GENDER.girl)}
-                >
-                  Дівчинка
-                </button>
-              </li>
-            </ul>
-
-            <div className={classes.list}>
-              <span className={newPrice ? classes.oldPrice : classes.price}>{price} грн</span>
-              {newPrice && <span className={classes.newPrice}>{newPrice} грн</span>}
-              {discount && <span className={classes.discount}>-{discount}</span>}
-            </div>
-
-            <ul className={classes.shopping}>
-              <li>
-                <Button
-                  type="button"
-                  disabled={!available}
-                  colored
-                  large
-                  rounded
-                  onClick={addToCart}
-                >
-                  <svg width="23px" height="17px">
-                    <use href={sprite + '#icon-cart'}></use>
-                  </svg>
-                  Купити
-                </Button>
-              </li>
-              <li>
-                <Button type="button" disabled={!available} large rounded onClick={addToCart}>
-                  Купити в 1 клік
-                </Button>
-              </li>
-            </ul>
-
-            {isMessageShown && <Message close={() => setIsMessageShown(false)} />}
-
-            <div className={classes.call}>
-              <b>Ви з Одеси? Заберіть товар у магазині</b>
-              <p>
-                <svg>
-                  <use href={sprite + '#icon-location'}></use>
-                </svg>
-                Одеса, вул. Михайлівська, 8 (10:00-19:00 щодня)
-              </p>
-              <Link to="">Забрати сьогодні</Link>
-            </div>
-
-            <ul className={classes.links}>
-              <li>
-                <Link to="">Оплата і доставка</Link>
-              </li>
-              <li>
-                <Link to="">Повернення і обмін</Link>
-              </li>
-              <li>
-                <Link to="">Контакти</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        {item && (
+          <ItemInfo
+            item={item}
+            color={color}
+            gender={gender}
+            setColor={setColor}
+            setGender={setGender}
+          />
+        )}
       </div>
 
       <Section title="З цим також купляють">

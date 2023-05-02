@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { useCloseModal } from 'hooks';
 import { useDispatch } from 'react-redux/es/exports';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import { useCloseModal } from 'hooks';
 import { logOut } from 'redux/auth';
+import { MENU } from 'utils';
 
 import classes from './Menu.module.css';
 import sprite from 'images/sprite.svg';
-import { MENU } from 'utils';
 import catalogs from 'data/catalogs.json';
 import categories from 'data/categories.json';
 

@@ -1,0 +1,83 @@
+.label {
+  margin-bottom: 12px;
+  display: block;
+
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  font-weight: 300;
+  color: var(--color-text-tertiary);
+}
+
+.list {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.colorBtn {
+  position: relative;
+
+  display: flex;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 10px;
+}
+
+.colorBtn.active::after,
+.colorBtn:hover::after,
+.colorBtn:focus::after {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  width: 38px;
+  height: 38px;
+
+  border-radius: 10px;
+  outline: 1px solid var(--color-accent);
+  transform: translate(-4px, -4px);
+}
+
+.colorBtn[data-color='blue'] {
+  background-color: #34cbff;
+}
+
+.colorBtn[data-color='red'] {
+  background-color: #ff3636;
+}
+
+.colorBtn[data-color='green'] {
+  background-color: #4aff3a;
+}
+
+.genderBtn {
+  padding: 13px;
+  display: flex;
+  height: 42px;
+
+  font-weight: 400;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.genderBtn.active,
+.genderBtn:hover,
+.genderBtn:focus {
+  background-color: var(--color-bg-primary-hover);
+  border-color: var(--color-accent);
+}
+
+@media screen and (min-width: 768px) {
+  .label,
+  .genderBtn {
+    font-size: var(--font-size-s);
+  }
+}

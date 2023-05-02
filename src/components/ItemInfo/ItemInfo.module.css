@@ -1,0 +1,166 @@
+.mainInfo {
+  margin-bottom: 104px;
+}
+
+.list {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.price,
+.newPrice {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.price {
+  color: var(--color-text-primary);
+}
+
+.newPrice {
+  color: var(--color-bg-info);
+}
+
+.oldPrice {
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  text-decoration-line: line-through;
+
+  color: var(--color-text-primary);
+}
+
+.discount {
+  padding: 7px;
+  display: inline-block;
+
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-info);
+  border-radius: 5px;
+}
+
+.shopping {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shopping > li {
+  flex-basis: 50%;
+}
+
+.shopping button {
+  width: 100%;
+}
+
+.call {
+  margin-bottom: 25px;
+  padding: 30px 20px;
+
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary-hover);
+  border-radius: 10px;
+}
+
+.call b {
+  margin-bottom: 20px;
+  display: block;
+
+  font-weight: 500;
+  font-size: var(--font-size-m);
+  line-height: calc(18 / 16);
+}
+
+.call p {
+  margin-bottom: 20px;
+  display: flex;
+  column-gap: 10px;
+
+  font-weight: 300;
+  font-size: var(--font-size-xs);
+}
+
+.call svg {
+  width: 14px;
+  min-width: 14px;
+  height: 18px;
+
+  stroke: var(--color-accent);
+}
+
+.call a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.call a:hover,
+.call a:focus {
+  color: var(--color-accent-hover);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.links a {
+  font-weight: 300;
+  font-size: var(--font-size-xs);
+  line-height: calc(16 / 14);
+  text-decoration-line: underline;
+  color: var(--color-text-tertiary);
+}
+
+.links a:hover,
+.links a:focus {
+  text-decoration-line: none;
+  color: var(--color-text-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .oldPrice {
+    font-size: var(--font-size-xxl);
+  }
+
+  .price,
+  .newPrice {
+    font-size: 24px;
+  }
+
+  .discount {
+    font-size: var(--font-size-s);
+  }
+
+  .call {
+    margin-bottom: 30px;
+    padding: 30px;
+  }
+
+  .call b {
+    font-size: var(--font-size-l);
+  }
+
+  .call a,
+  .call p,
+  .links a {
+    font-size: var(--font-size-s);
+  }
+
+  .links {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mainInfo {
+    margin-bottom: 82px;
+    display: flex;
+    column-gap: 30px;
+  }
+}

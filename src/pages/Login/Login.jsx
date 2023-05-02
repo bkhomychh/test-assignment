@@ -5,9 +5,10 @@ import * as Yup from 'yup';
 
 import InputField from 'components/InputField';
 
+import { logIn } from 'redux/auth';
+
 import classes from 'styles/Form.module.css';
 import { phoneRegExp } from 'utils/constants';
-import { logIn } from 'redux/auth';
 
 Yup.addMethod(Yup.MixedSchema, 'oneOfSchemas', function (schemas) {
   return this.test('one-of-schemas', 'Введено невірні дані', item =>

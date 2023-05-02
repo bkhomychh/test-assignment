@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
+
+import Menu from 'components/Menu';
+
+import { useMediaQuery } from 'hooks';
 import { selectCart } from 'redux/cart';
 import { selectFavorite } from 'redux/favorite';
 import { selectComparison } from 'redux/comparison';
 
 import classes from './Header.module.css';
 import sprite from 'images/sprite.svg';
-import Menu from 'components/Menu';
-import { useMediaQuery } from 'hooks';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

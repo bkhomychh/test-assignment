@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import classes from './PreviewImage.module.css';
 import sprite from 'images/sprite.svg';
+import classes from './PreviewImage.module.css';
 
 const PreviewImage = ({ file, removeFile }) => {
   const [preview, setPreview] = useState(null);

@@ -19,6 +19,8 @@ const Button = ({ children, colored = false, large = false, rounded = false, ...
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   colored: PropTypes.bool,
+  large: PropTypes.bool,
+  rounded: PropTypes.bool,
 };
 
 export default Button;

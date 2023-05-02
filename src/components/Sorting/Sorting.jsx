@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { SORTING_OPTIONS } from 'utils/constants';
 
 import classes from './Sorting.module.css';
 import sprite from 'images/sprite.svg';
-import { SORTING_OPTIONS } from 'utils/constants';
 
 const Sorting = ({ currentSorting, setCurrentSorting }) => {
   const [isSortingBtnActive, setIsSortingBtnActive] = useState(false);

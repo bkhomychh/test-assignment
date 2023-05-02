@@ -12,6 +12,14 @@ import sprite from 'images/sprite.svg';
 import producers from 'data/producers.json';
 import categories from 'data/categories.json';
 
+const formikInitialState = {
+  category: '',
+  available: false,
+  discount: false,
+  price: [0, 30000],
+  producer: [],
+};
+
 const FilterMenu = ({ closeMenu, setFilters }) => {
   const [isCategoryShown, setIsCategoryShown] = useState(true);
   const [isPriceShown, setIsPriceShown] = useState(true);
@@ -20,14 +28,7 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
   useCloseModal(closeMenu);
 
   const formik = useFormik({
-    initialValues: {
-      category: '',
-      available: false,
-      discount: false,
-      price: [0, 30000],
-      producer: [],
-    },
-
+    initialValues: formikInitialState,
     validationSchema: Yup.object({
       price: Yup.array().of(Yup.number()),
     }),

@@ -1,11 +1,11 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import formClasses from 'styles/Form.module.css';
 import InputField from 'components/InputField';
 import Button from 'components/Button';
 
 import classes from './ReviewForm.module.css';
+import formClasses from 'styles/Form.module.css';
 import sprite from 'images/sprite.svg';
 import PreviewImage from 'components/PreviewImage';
 
