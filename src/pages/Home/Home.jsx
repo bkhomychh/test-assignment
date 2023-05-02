@@ -7,6 +7,7 @@ import PopularCategories from 'components/PopularCategories';
 
 import classes from './Home.module.css';
 import items from 'data/items.json';
+import ViewedItems from 'components/ViewedItems';
 
 const filteredItems = items.filter(item => item.discount !== '');
 
@@ -28,9 +29,7 @@ const Home = () => {
       <Section>
         <About />
       </Section>
-      <Section title="Ви переглядали" to="/">
-        <Carousel items={items} />
-      </Section>
+      <ViewedItems />
     </div>
   );
 };

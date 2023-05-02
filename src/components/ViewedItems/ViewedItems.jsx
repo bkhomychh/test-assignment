@@ -1,14 +1,16 @@
 import Section from 'components/Section';
 import Carousel from 'components/Carousel';
-import { useState } from 'react';
+
+import { selectViewed } from 'redux/viewed';
+import { useSelector } from 'react-redux';
 
 const ViewedItems = () => {
-  const [items, setItems] = useState([]);
+  const viewedItems = useSelector(selectViewed);
 
   return (
-    items.length > 0 && (
+    viewedItems.length > 0 && (
       <Section title="Ви переглядали">
-        <Carousel items={items} />
+        <Carousel items={viewedItems} />
       </Section>
     )
   );

@@ -9,18 +9,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as cart from 'redux/cart';
 import * as favorite from 'redux/favorite';
 import * as comparison from 'redux/comparison';
+import * as viewed from 'redux/viewed';
 
 import sprite from 'images/sprite.svg';
 import { useState } from 'react';
 import Message from 'components/Message';
 
-const Card = ({ id, title, img, price, discount, newPrice, available }) => {
+const Card = props => {
   const [isMessageShown, setIsMessageShown] = useState(false);
   const favoriteItems = useSelector(favorite.selectFavorite);
   const comparedItems = useSelector(comparison.selectComparison);
+  const viewedItems = useSelector(viewed.selectViewed);
   const dispatch = useDispatch();
   const { catalog = 'catalog' } = useParams();
 
+  const { id, title, img, price, discount, newPrice, available } = props;
   const isFavorite = favoriteItems.some(el => el.id === id);
   const isCompared = comparedItems.some(el => el.id === id);
 
@@ -29,9 +32,17 @@ const Card = ({ id, title, img, price, discount, newPrice, available }) => {
     setIsMessageShown(true);
   };
 
+  const saveItem = () => {
+    const isNewItem = viewedItems.every(item => item.id !== id);
+
+    if (isNewItem) {
+      dispatch(viewed.addItem({ ...props }));
+    }
+  };
+
   return (
     <div className={classes.wrapper}>
-      <Link className={classes.card} to={`/${catalog}/${id}`}>
+      <Link className={classes.card} to={`/${catalog}/${id}`} onClick={saveItem}>
         <div className={classes.thumb}>
           <img src={img || imgPlaceholder} alt={title} loading="lazy" />
           {discount && <span>-{discount}</span>}

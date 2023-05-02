@@ -5,6 +5,7 @@ import { authSlice } from './auth';
 import { cartPersistedReducer } from './cart';
 import { comparisonPersistedReducer } from './comparison';
 import { favoritePersistedReducer } from './favorite';
+import { viewedPersistedReducer } from './viewed';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     cart: cartPersistedReducer,
     favorite: favoritePersistedReducer,
     comparison: comparisonPersistedReducer,
+    viewed: viewedPersistedReducer,
   },
 
   middleware: getDefaultMiddleware =>
