@@ -27,7 +27,7 @@
 
 .number {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 2px;
 
   font-size: var(--font-size-xl);

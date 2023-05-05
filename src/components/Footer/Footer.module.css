@@ -40,7 +40,7 @@
 .socials {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 25px;
 }
 
 .socials a {
@@ -78,7 +78,7 @@
   grid-template: repeat(5, auto) / repeat(auto-fit, minmax(100px, auto));
   grid-auto-flow: column;
   align-items: baseline;
-  gap: 15px 30px;
+  gap: 15px 36px;
 
   font-size: var(--font-size-xs);
 }
@@ -146,15 +146,23 @@
     margin: 0 auto;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 40px 140px;
     max-width: 1350px;
-    padding: 60px 0 62px;
+    padding: 60px 30px 62px;
+  }
+
+  .box {
+    column-gap: 100px;
   }
 
   .box > div {
     margin: 0;
+  }
+
+  .list {
+    column-gap: 54px;
   }
 
   .contactInfo {
@@ -183,6 +191,10 @@
 
   .sign {
     padding-bottom: 0;
+  }
+
+  .sign :global(.container) {
+    padding: 0;
   }
 
   .copyright {

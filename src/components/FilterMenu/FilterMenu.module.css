@@ -103,8 +103,8 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 15px;
 
   font-size: var(--font-size-s);
   line-height: calc(17 / 15);
@@ -114,11 +114,18 @@
 .input {
   padding: 15px;
   height: 47px;
-  width: 76px;
 
   font-weight: 300;
   border: 1px solid var(--color-border);
   border-radius: 5px;
+}
+
+.input:first-of-type {
+  width: 65px;
+}
+
+.input:last-of-type {
+  width: 74px;
 }
 
 .input:focus {
@@ -187,8 +194,18 @@
 }
 
 @media screen and (min-width: 1350px) {
+  .box:first-child {
+    padding-top: 0;
+  }
   .modal {
     min-width: 234px;
+  }
+
+  .modal span {
+    padding-right: 5px;
+  }
+  .container > span {
+    padding: 0;
   }
   .wrapper {
     display: none;

@@ -9,6 +9,8 @@
 }
 
 .title {
+  margin-bottom: 20px;
+
   font-size: var(--font-size-xl);
   line-height: calc(20 / 18);
   font-weight: 700;
@@ -22,7 +24,7 @@
 .actions {
   margin-bottom: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 20px;
   min-width: 280px;
 }
@@ -125,10 +127,24 @@
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
+    align-items: center;
+  }
+
+  .title,
+  .actions {
+    margin: 0;
   }
 
   .title {
     font-size: var(--font-size-xxl);
+  }
+
+  .actions {
+    column-gap: 30px;
+  }
+
+  .container {
+    margin-bottom: 30px;
   }
 
   .actions button,
@@ -155,10 +171,6 @@
     margin-right: 10px;
 
     font-size: var(--font-size-xxl);
-  }
-
-  .container {
-    margin-bottom: 20px;
   }
 
   .additionalInfo {

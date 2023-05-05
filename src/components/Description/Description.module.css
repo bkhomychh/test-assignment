@@ -38,7 +38,7 @@
 
   font-weight: 300;
   font-size: var(--font-size-xs);
-  line-height: calc(25 / 15);
+  line-height: calc(25 / 14);
 
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
@@ -68,10 +68,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .section {
-    margin-bottom: 80px;
-  }
-
   .title {
     font-size: var(--font-size-xxl);
   }
@@ -88,5 +84,9 @@
 @media screen and (min-width: 1350px) {
   .btn {
     display: none;
+  }
+
+  .text {
+    line-height: 25px;
   }
 }

@@ -15,7 +15,7 @@
 
 .box {
   display: flex;
-  column-gap: 10px;
+  column-gap: 9px;
 }
 
 .menuBtn {
@@ -54,8 +54,8 @@
 
 .wrapper > button {
   position: absolute;
-  top: 50%;
-  right: 15px;
+  top: 52%;
+  right: 14px;
 
   transform: translateY(-50%);
 }
@@ -63,7 +63,7 @@
 .actions {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 19px;
 }
 
 .actions button {

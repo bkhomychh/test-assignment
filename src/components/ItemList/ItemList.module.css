@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(2, 156px);
   grid-auto-rows: auto;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 20px 16px;
 }
 
@@ -62,6 +62,10 @@
   .footer > button {
     margin: 0;
     height: 57px;
+  }
+
+  .pagination {
+    gap: 20px;
   }
 }
 

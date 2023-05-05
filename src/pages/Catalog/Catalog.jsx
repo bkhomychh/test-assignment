@@ -86,7 +86,7 @@ const Catalog = () => {
           )}
 
           {visibleItems.length > 0 ? (
-            <ItemList items={visibleItems} />
+            <ItemList items={visibleItems.slice(0, 16)} />
           ) : (
             <p className={classes.info}>Нічого не було знайдено :(</p>
           )}

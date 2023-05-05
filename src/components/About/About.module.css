@@ -44,5 +44,6 @@
 @media screen and (min-width: 768px) {
   .text {
     font-size: var(--font-size-s);
+    line-height: 16.73px;
   }
 }

@@ -81,7 +81,7 @@ const Header = () => {
             <div className={classes.wrapper}>
               <input type="text" placeholder="Я шукаю..." />
               <button type="submit">
-                <svg width="15px" height="15px">
+                <svg width="16px" height="16px">
                   <use href={sprite + '#icon-search'}></use>
                 </svg>
               </button>
@@ -98,7 +98,7 @@ const Header = () => {
             </li>
             <li>
               <button type="button">
-                <svg width="30px" height="20px">
+                <svg width="28px" height="20px">
                   <use href={sprite + '#icon-comparison'}></use>
                 </svg>
                 <span className={getClasses(comparedItems.length)}>{comparedItems.length}</span>
