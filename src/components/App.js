@@ -17,8 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<PrivateRoute component={<Home />} />} />
-          <Route path="catalog" element={<PrivateRoute component={<Catalog />} />} />
-          <Route path="catalog/:id" element={<PrivateRoute component={<ProductDetails />} />} />
+          <Route path=":catalog" element={<PrivateRoute component={<Catalog />} />} />
+          <Route path=":catalog/:id" element={<PrivateRoute component={<ProductDetails />} />} />
         </Route>
 
         <Route element={<AuthLayout />}>

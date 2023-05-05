@@ -9,7 +9,7 @@ import classes from './Home.module.css';
 import items from 'data/items.json';
 import ViewedItems from 'components/ViewedItems';
 
-const filteredItems = items.filter(item => item.discount !== '');
+const filteredItems = items.filter(item => item.discount !== '' && item.available);
 
 const Home = () => {
   return (

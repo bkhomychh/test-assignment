@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.logo {
+  display: flex;
+}
+
 .logo > svg {
   width: 90px;
   height: 20px;
@@ -98,6 +102,10 @@
   opacity: 0;
 }
 
+.catalog {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     padding: 14px 0;
@@ -133,5 +141,79 @@
   .number.active {
     width: 21px;
     height: 21px;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .header {
+    padding: 20px 0 0;
+  }
+  .header > :global(.container) {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 30px;
+  }
+
+  .box {
+    flex-basis: 100%;
+  }
+
+  .catalog {
+    position: relative;
+
+    display: block;
+    width: 234px;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: var(--color-bg-primary-hover);
+  }
+
+  .catalog.open {
+    background-color: var(--color-bg-primary);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.07);
+  }
+
+  .catalogBtn {
+    padding: 30px;
+    display: flex;
+    column-gap: 10px;
+    width: 100%;
+
+    font-weight: 500;
+    font-size: var(--font-size-l);
+    line-height: calc(19 / 17);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+  }
+
+  .catalogBtn svg {
+    color: var(--color-accent);
+  }
+
+  .catalog ul {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+
+    padding: 30px 28px;
+
+    background-color: var(--color-bg-primary);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.07);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .catalog ul::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+
+    margin: 0 auto;
+    display: block;
+    height: 1px;
+    width: 174px;
+    background-color: #e1e1e1;
   }
 }

@@ -1,8 +1,11 @@
+import { useMediaQuery } from 'hooks';
 import { Link } from 'react-router-dom';
 
 import classes from './PopularCategories.module.css';
 
 const PopularCategories = () => {
+  const isDeskVersion = useMediaQuery('1350px');
+
   return (
     <>
       <ul className={classes.categories}>
@@ -13,7 +16,7 @@ const PopularCategories = () => {
         </li>
         <li className={`${classes.category} ${classes.room}`}>
           <Link to="catalog">
-            <span>Дитячі ліжечка</span>
+            <span>{isDeskVersion ? 'Ліжечка' : 'Дитячі ліжечка'}</span>
           </Link>
         </li>
         <li className={`${classes.category} ${classes.pot}`}>
@@ -33,7 +36,7 @@ const PopularCategories = () => {
         </li>
         <li className={`${classes.category} ${classes.bed}`}>
           <Link to="catalog">
-            <span>Дитяча постільна білизна</span>
+            <span>{isDeskVersion ? 'Постільна білизна' : 'Дитяча постільна білизна'}</span>
           </Link>
         </li>
       </ul>

@@ -1,0 +1,58 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  font-weight: 300;
+  font-size: var(--font-size-s);
+  line-height: calc(17 / 15);
+  letter-spacing: 0.01rem;
+  color: var(--color-text-primary);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.link::before {
+  content: '';
+  display: block;
+
+  min-width: 25px;
+  height: 25px;
+
+  background-repeat: no-repeat;
+}
+
+.link[data-catalog='carriage']::before {
+  background-image: url('images/catalog/carriage.png');
+}
+.link[data-catalog='room']::before {
+  background-image: url('images/catalog/room.png');
+}
+.link[data-catalog='chair']::before {
+  background-image: url('images/catalog/chair.png');
+}
+.link[data-catalog='feeding']::before {
+  background-image: url('images/catalog/feeding.png');
+}
+.link[data-catalog='soap']::before {
+  background-image: url('images/catalog/soap.png');
+}
+.link[data-catalog='autochair']::before {
+  background-image: url('images/catalog/autochair.png');
+}
+.link[data-catalog='car']::before {
+  background-image: url('images/catalog/car.png');
+}
+.link[data-catalog='toy']::before {
+  background-image: url('images/catalog/toy.png');
+}
+.link[data-catalog='clothes']::before {
+  background-image: url('images/catalog/clothes.png');
+}
+.link[data-catalog='new']::before {
+  background-image: url('images/catalog/new.png');
+}

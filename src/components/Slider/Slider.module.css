@@ -7,6 +7,7 @@
 
 .slide img {
   min-height: 260px;
+  max-height: 571px;
   object-fit: cover;
   object-position: center;
 }
@@ -77,5 +78,16 @@
 
   .nextBtn {
     right: 20px;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .wrapper {
+    padding-left: 262px;
+  }
+
+  .slide img {
+    min-height: 260px;
+    max-height: 568px;
   }
 }

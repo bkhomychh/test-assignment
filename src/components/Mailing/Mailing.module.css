@@ -1,6 +1,10 @@
 .wrapper {
+  margin: 0 auto;
+
   color: var(--color-text-secondary);
   background-color: var(--color-bg-info);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .wrapper > :global(.container) {
@@ -12,7 +16,8 @@
   margin-bottom: 20px;
 
   font-size: var(--font-size-xl);
-  line-height: calc(20 / 18);
+  font-weight: 700;
+  line-height: calc(18 / 16);
   text-transform: uppercase;
 }
 
@@ -66,13 +71,16 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
+    max-width: 768px;
+
     background-color: var(--color-bg-primary);
+    background-image: url('images/footer/bg-s.png');
   }
 
   .wrapper :global(.container) {
     padding: 80px 16px 69px;
-    background: url('images/footer/bg-mother.png') no-repeat right 16px bottom,
-      url('images/footer/bg-tablet.png') no-repeat;
+
+    background: url('images/footer/bg-mother.png') no-repeat right 16px bottom;
   }
 
   .call {
@@ -92,9 +100,44 @@
 }
 
 @media screen and (min-width: 1000px) {
+  .wrapper {
+    max-width: 1000px;
+
+    background-image: url('images/footer/bg-l.png');
+  }
+
   .wrapper :global(.container) {
     padding: 80px 30px 70px;
-    background: url('images/footer/bg-mother.png') no-repeat right 30px bottom,
-      url('images/footer/bg-desktop.png') no-repeat;
+
+    background-position: right 30px bottom;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .wrapper {
+    max-width: 1920px;
+
+    background-image: url('images/footer/bg-xl.png');
+  }
+
+  .wrapper :global(.container) {
+    padding: 120px 30px 90px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    width: 100%;
+
+    background-position: right 146px bottom;
+  }
+
+  .call {
+    margin: 0;
+    max-width: 335px;
+
+    line-height: calc(20 / 16);
+  }
+
+  .form input {
+    width: 300px;
   }
 }

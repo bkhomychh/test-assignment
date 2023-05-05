@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+
   min-width: 360px;
 }
 
@@ -32,7 +34,7 @@
 .location {
   font-size: var(--font-size-xs);
   font-weight: 300;
-  line-height: calc(16 / 14);
+  line-height: calc(18 / 16);
 }
 
 .socials {
@@ -48,7 +50,7 @@
 }
 
 .additionalInfo {
-  padding: 40px 0;
+  padding-top: 40px;
 
   font-weight: 300;
   color: var(--color-text-secondary);
@@ -57,6 +59,10 @@
 
 .box > div {
   margin-bottom: 35px;
+}
+
+.wrapper {
+  background-color: var(--color-accent);
 }
 
 .title {
@@ -77,12 +83,17 @@
   font-size: var(--font-size-xs);
 }
 
+.sign {
+  padding-bottom: 40px;
+}
+
 .copyright {
   margin-bottom: 12px;
 
   font-size: var(--font-size-xs);
+  font-weight: 300;
   line-height: calc(16 / 14);
-  color: var(--color-text-quaternary);
+  color: #f3a8bf;
 }
 
 .payment {
@@ -123,5 +134,58 @@
 
   .list {
     font-size: var(--font-size-s);
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .wrapper {
+    background-color: var(--color-accent);
+  }
+
+  .block {
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px 140px;
+    max-width: 1350px;
+    padding: 60px 0 62px;
+  }
+
+  .box > div {
+    margin: 0;
+  }
+
+  .contactInfo {
+    padding: 30px;
+    width: 300px;
+
+    border-radius: 20px;
+  }
+
+  .contactInfo :global(.container) {
+    padding: 0;
+    min-width: auto;
+  }
+
+  .additionalInfo {
+    padding: 0;
+  }
+
+  .additionalInfo :global(.container) {
+    padding: 0;
+  }
+
+  .location {
+    line-height: calc(18 / 14);
+  }
+
+  .sign {
+    padding-bottom: 0;
+  }
+
+  .copyright {
+    margin-bottom: 10px;
   }
 }

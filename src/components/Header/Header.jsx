@@ -11,23 +11,32 @@ import { selectComparison } from 'redux/comparison';
 
 import classes from './Header.module.css';
 import sprite from 'images/sprite.svg';
+import NavLinks from 'components/NavLinks';
+import CatalogList from 'components/CatalogList';
+import { useEffect } from 'react';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState();
   const cart = useSelector(selectCart);
   const favoriteItems = useSelector(selectFavorite);
   const comparedItems = useSelector(selectComparison);
-  const matches = useMediaQuery('768px');
+  const isTabVersion = useMediaQuery('768px');
+  const isDeskVersion = useMediaQuery('1350px');
+
+  useEffect(() => {
+    setIsMenuOpen(isDeskVersion);
+  }, [isDeskVersion]);
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu = () => setIsMenuOpen(state => !state);
 
   const getClasses = number => {
     const classList = [classes.number];
 
     if (number > 0) {
       classList.push(classes.active);
-    } else if (!matches) {
+    } else if (!isTabVersion) {
       classList.push(classes.hidden);
     }
 
@@ -39,16 +48,31 @@ const Header = () => {
       <header className={classes.header}>
         <div className="container">
           <div className={classes.box}>
-            <button className={classes.menuBtn} type="button" onClick={openMenu}>
-              <svg width="30px" height="18px">
-                <use href={sprite + '#icon-menu'}></use>
-              </svg>
-            </button>
+            {!isDeskVersion && (
+              <button className={classes.menuBtn} type="button" onClick={openMenu}>
+                <svg width="30px" height="18px">
+                  <use href={sprite + '#icon-menu'}></use>
+                </svg>
+              </button>
+            )}
+
             <Link className={classes.logo} to="/">
               <svg>
                 <use href={sprite + '#icon-logo'}></use>
               </svg>
             </Link>
+            {isDeskVersion && <NavLinks />}
+          </div>
+
+          <div className={`${classes.catalog} ${isMenuOpen ? classes.open : ''}`}>
+            <button className={classes.catalogBtn} onClick={toggleMenu}>
+              <svg width="25px" height="16px">
+                <use href={sprite + '#icon-burger-menu'}></use>
+              </svg>
+              Каталог
+            </button>
+
+            {isMenuOpen && <CatalogList closeMenu={closeMenu} />}
           </div>
 
           <form className={classes.form}>
@@ -98,7 +122,7 @@ const Header = () => {
         </div>
       </header>
 
-      {isMenuOpen && <Menu closeMenu={closeMenu} />}
+      {!isDeskVersion && isMenuOpen && <Menu closeMenu={closeMenu} />}
     </>
   );
 };

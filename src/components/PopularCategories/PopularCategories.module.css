@@ -133,5 +133,29 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1350px) {
+  .categories {
+    grid-template: repeat(2, 190px) / repeat(4, 1fr);
+    grid-auto-flow: column;
+    gap: 30px;
+  }
+
+  .carriage {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .bed {
+    grid-area: 1 / 3 / 3 / 4;
+  }
+
+  .bed span {
+    max-width: 180px;
+  }
+
+  .room,
+  .pot,
+  .puzzles,
+  .bath {
+    grid-area: auto;
+  }
 }
