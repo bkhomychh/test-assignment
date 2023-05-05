@@ -1,3 +1,7 @@
+.wrapper {
+  margin-bottom: 20px;
+}
+
 .box {
   padding-top: 30px;
   display: flex;
@@ -5,8 +9,6 @@
 }
 
 .title {
-  margin-bottom: 20px;
-
   font-size: var(--font-size-xl);
   line-height: calc(20 / 18);
   font-weight: 700;
@@ -20,7 +22,9 @@
 .actions {
   margin-bottom: 20px;
   display: flex;
+  justify-content: flex-end;
   gap: 20px;
+  min-width: 280px;
 }
 
 .actions button {
@@ -118,7 +122,9 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    margin-bottom: 76px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
   }
 
   .title {
@@ -158,5 +164,17 @@
   .additionalInfo {
     margin-bottom: 80px;
     padding: 80px 0;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .block {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 740px 1fr;
+    gap: 30px;
+  }
+  .block section {
+    margin: 0;
   }
 }

@@ -146,3 +146,10 @@
     margin-bottom: 30px;
   }
 }
+
+@media screen and (min-width: 1350px) {
+  .reviews {
+    column-count: 3;
+    column-gap: 30px;
+  }
+}

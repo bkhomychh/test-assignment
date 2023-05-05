@@ -9,7 +9,7 @@
 }
 
 .list {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -79,5 +79,9 @@
   .label,
   .genderBtn {
     font-size: var(--font-size-s);
+  }
+
+  .list {
+    margin-bottom: 30px;
   }
 }

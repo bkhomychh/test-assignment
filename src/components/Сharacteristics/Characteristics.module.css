@@ -35,6 +35,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  max-height: 322px;
 
   font-size: var(--font-size-xs);
 
@@ -82,5 +83,11 @@
 
   .list {
     font-size: var(--font-size-s);
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .btn {
+    display: none;
   }
 }

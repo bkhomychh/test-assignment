@@ -56,39 +56,41 @@ const ProductDetails = () => {
           </BackLink>
         </div>
 
-        <h1 className={classes.title}>{title}</h1>
-        <ul className={classes.actions}>
-          <li>
-            <button
-              className={classes.favoriteBtn}
-              type="button"
-              onClick={() => {
-                if (isFavorite) dispatch(favorite.deleteItem(id));
-                else dispatch(favorite.addItem({ id, title }));
-              }}
-            >
-              <svg width="23px" height="19px">
-                <use href={sprite + '#icon-favorite'}></use>
-              </svg>
-              {isFavorite ? 'З вибраного' : 'У вибране'}
-            </button>
-          </li>
-          <li>
-            <button
-              className={classes.comparisonBtn}
-              type="button"
-              onClick={() => {
-                if (isCompared) dispatch(comparison.deleteItem(id));
-                else dispatch(comparison.addItem({ id, title }));
-              }}
-            >
-              <svg width="29px" height="19px">
-                <use href={sprite + '#icon-comparison'}></use>
-              </svg>
-              Порівняти
-            </button>
-          </li>
-        </ul>
+        <div className={classes.wrapper}>
+          <h1 className={classes.title}>{title}</h1>
+          <ul className={classes.actions}>
+            <li>
+              <button
+                className={classes.favoriteBtn}
+                type="button"
+                onClick={() => {
+                  if (isFavorite) dispatch(favorite.deleteItem(id));
+                  else dispatch(favorite.addItem({ id, title }));
+                }}
+              >
+                <svg width="23px" height="19px">
+                  <use href={sprite + '#icon-favorite'}></use>
+                </svg>
+                {isFavorite ? 'З вибраного' : 'У вибране'}
+              </button>
+            </li>
+            <li>
+              <button
+                className={classes.comparisonBtn}
+                type="button"
+                onClick={() => {
+                  if (isCompared) dispatch(comparison.deleteItem(id));
+                  else dispatch(comparison.addItem({ id, title }));
+                }}
+              >
+                <svg width="29px" height="19px">
+                  <use href={sprite + '#icon-comparison'}></use>
+                </svg>
+                Порівняти
+              </button>
+            </li>
+          </ul>
+        </div>
 
         <div className={classes.container}>
           {available ? (
@@ -126,8 +128,10 @@ const ProductDetails = () => {
 
       <div className={classes.additionalInfo}>
         <div className="container">
-          <Description />
-          <Characteristics />
+          <div className={classes.block}>
+            <Description />
+            <Characteristics />
+          </div>
           <Reviews reviews={reviews} rate={rate} />
         </div>
       </div>

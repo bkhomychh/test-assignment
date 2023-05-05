@@ -107,6 +107,7 @@
 
 @media screen and (min-width: 1000px) {
   .images {
+    margin-bottom: 0;
     width: calc((100% - 30px) / 2);
   }
 

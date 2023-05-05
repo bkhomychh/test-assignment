@@ -56,6 +56,7 @@
 
 .shopping button {
   width: 100%;
+  height: 77px;
 }
 
 .call {
@@ -139,7 +140,7 @@
 
   .call {
     margin-bottom: 30px;
-    padding: 30px;
+    padding: 31px 30px;
   }
 
   .call b {
@@ -154,6 +155,10 @@
 
   .links {
     flex-direction: row;
+  }
+
+  .shopping {
+    margin-bottom: 30px;
   }
 }
 
