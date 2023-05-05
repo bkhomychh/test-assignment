@@ -24,7 +24,7 @@ const swiperOptions = {
   },
 };
 
-const Filters = ({ currentFilters = [], setFilters, removeFilter }) => {
+const Filters = ({ currentFilters = [], setFilters, removeFilter, resetCurrentPage }) => {
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
 
   const showFilterMenu = () => setIsFilterMenuOpen(true);
@@ -60,7 +60,11 @@ const Filters = ({ currentFilters = [], setFilters, removeFilter }) => {
 
       {isFilterMenuOpen && (
         <div className={classes.backdrop}>
-          <FilterMenu setFilters={setFilters} closeMenu={hideFilterMenu} />
+          <FilterMenu
+            setFilters={setFilters}
+            closeMenu={hideFilterMenu}
+            resetCurrentPage={resetCurrentPage}
+          />
         </div>
       )}
     </>

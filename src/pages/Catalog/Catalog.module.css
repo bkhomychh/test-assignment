@@ -29,6 +29,10 @@
   margin-bottom: 40px;
 }
 
+.content div:last-child {
+  flex-grow: 1;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     padding: 30px 0 80px;

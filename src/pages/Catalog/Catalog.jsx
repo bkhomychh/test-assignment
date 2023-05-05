@@ -10,18 +10,20 @@ import Sorting from 'components/Sorting';
 import { filterItems, SORTING_OPTIONS } from 'utils';
 
 import classes from './Catalog.module.css';
-import items from 'data/items.json';
+import itemList from 'data/items.json';
 import FilterMenu from 'components/FilterMenu';
 import { useMediaQuery } from 'hooks';
 
 const Catalog = () => {
-  const [visibleItems, setVisibleItems] = useState(items);
+  const [items, setItems] = useState(itemList);
   const [filters, setFilters] = useState([]);
   const [currentSorting, setCurrentSorting] = useState(SORTING_OPTIONS.default);
   const isDeskVersion = useMediaQuery('1350px');
+  const [currentPage, setCurrentPage] = useState(1);
+  const limit = 12;
 
   useEffect(() => {
-    const filteredItems = filterItems(items, filters);
+    const filteredItems = filterItems(itemList, filters);
 
     switch (currentSorting) {
       case SORTING_OPTIONS.popular:
@@ -35,9 +37,10 @@ const Catalog = () => {
         break;
       default:
     }
-
-    setVisibleItems(filteredItems);
+    setItems(filteredItems);
   }, [filters, currentSorting]);
+
+  const resetCurrentPage = () => setCurrentPage(1);
 
   const removeFilter = ({ name, value: filterValue }) => {
     if (name === 'producer') {
@@ -71,25 +74,31 @@ const Catalog = () => {
         </BackLink>
         <div className={classes.box}>
           <h1 className={classes.title}>Дитячі коляски</h1>
-          <Sorting currentSorting={currentSorting} setCurrentSorting={setCurrentSorting} />
+          <Sorting
+            currentSorting={currentSorting}
+            setCurrentSorting={setCurrentSorting}
+            resetCurrentPage={resetCurrentPage}
+          />
         </div>
 
         <div className={classes.content}>
           {isDeskVersion ? (
-            <FilterMenu setFilters={setFilters} />
+            <FilterMenu setFilters={setFilters} resetCurrentPage={resetCurrentPage} />
           ) : (
             <Filters
               setFilters={setFilters}
               currentFilters={filterList}
               removeFilter={removeFilter}
+              resetCurrentPage={resetCurrentPage}
             />
           )}
 
-          {visibleItems.length > 0 ? (
-            <ItemList items={visibleItems.slice(0, 16)} />
-          ) : (
-            <p className={classes.info}>Нічого не було знайдено :(</p>
-          )}
+          <ItemList
+            items={items}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+            limit={limit}
+          />
         </div>
       </Section>
     </div>

@@ -123,7 +123,7 @@ const ProductDetails = () => {
       </div>
 
       <Section title="З цим також купляють">
-        <Carousel items={items.slice(0, 10)} />
+        <Carousel items={items.filter(item => item.available)} />
       </Section>
 
       <div className={classes.additionalInfo}>

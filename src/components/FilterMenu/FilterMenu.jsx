@@ -20,7 +20,7 @@ const formikInitialState = {
   producer: [],
 };
 
-const FilterMenu = ({ closeMenu, setFilters }) => {
+const FilterMenu = ({ closeMenu, setFilters, resetCurrentPage }) => {
   const [isCategoryShown, setIsCategoryShown] = useState(true);
   const [isPriceShown, setIsPriceShown] = useState(true);
   const [isProducerShown, setIsProducerShown] = useState(true);
@@ -47,6 +47,7 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
       });
 
       setFilters(filters);
+      resetCurrentPage();
     },
   });
 
@@ -217,6 +218,7 @@ const FilterMenu = ({ closeMenu, setFilters }) => {
 
 FilterMenu.propTypes = {
   closeMenu: PropTypes.func,
+  resetCurrentPage: PropTypes.func.isRequired,
 };
 
 export default FilterMenu;

@@ -7,6 +7,10 @@
   gap: 20px 16px;
 }
 
+.footer {
+  width: 100%;
+}
+
 .footer > button {
   margin: 0 auto 30px;
   height: 56px;
@@ -65,6 +69,7 @@
   }
 
   .pagination {
+    margin-left: auto;
     gap: 20px;
   }
 }
