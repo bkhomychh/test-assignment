@@ -162,7 +162,6 @@
     position: relative;
 
     display: block;
-    width: 234px;
 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -177,8 +176,10 @@
   .catalogBtn {
     padding: 30px;
     display: flex;
+    align-items: center;
     column-gap: 10px;
-    width: 100%;
+    width: 234px;
+    height: 79px;
 
     font-weight: 500;
     font-size: var(--font-size-l);

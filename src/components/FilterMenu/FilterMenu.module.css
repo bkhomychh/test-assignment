@@ -1,15 +1,3 @@
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-
-  background-color: rgba(0, 0, 0, 0.15);
-  overflow: auto;
-}
-
 .modal {
   position: relative;
 
@@ -30,6 +18,10 @@
   max-width: 234px;
 
   border-bottom: 1px solid #e1e1e1;
+}
+
+.borderless {
+  border: none;
 }
 
 .list {
@@ -192,4 +184,13 @@
   display: flex;
 
   color: var(--color-text-secondary);
+}
+
+@media screen and (min-width: 1350px) {
+  .modal {
+    min-width: 234px;
+  }
+  .wrapper {
+    display: none;
+  }
 }

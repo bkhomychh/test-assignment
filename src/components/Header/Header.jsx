@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 
 import Menu from 'components/Menu';
@@ -22,10 +22,12 @@ const Header = () => {
   const comparedItems = useSelector(selectComparison);
   const isTabVersion = useMediaQuery('768px');
   const isDeskVersion = useMediaQuery('1350px');
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    setIsMenuOpen(isDeskVersion);
-  }, [isDeskVersion]);
+    const shouldOpenMenu = isDeskVersion && pathname === '/';
+    setIsMenuOpen(shouldOpenMenu);
+  }, [isDeskVersion, pathname]);
 
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);

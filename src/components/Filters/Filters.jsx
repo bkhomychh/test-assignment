@@ -58,7 +58,11 @@ const Filters = ({ currentFilters = [], setFilters, removeFilter }) => {
         ))}
       </Swiper>
 
-      {isFilterMenuOpen && <FilterMenu setFilters={setFilters} closeMenu={hideFilterMenu} />}
+      {isFilterMenuOpen && (
+        <div className={classes.backdrop}>
+          <FilterMenu setFilters={setFilters} closeMenu={hideFilterMenu} />
+        </div>
+      )}
     </>
   );
 };

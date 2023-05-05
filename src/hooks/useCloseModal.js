@@ -11,8 +11,10 @@ export const useCloseModal = fn => {
       }
     };
 
-    window.addEventListener('click', handleClick);
-    document.body.classList.add('no-scroll');
+    if (fn) {
+      window.addEventListener('click', handleClick);
+      document.body.classList.add('no-scroll');
+    }
 
     return () => {
       window.removeEventListener('click', handleClick);

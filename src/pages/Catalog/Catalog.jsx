@@ -10,13 +10,15 @@ import Sorting from 'components/Sorting';
 import { filterItems, SORTING_OPTIONS } from 'utils';
 
 import classes from './Catalog.module.css';
-import sprite from 'images/sprite.svg';
 import items from 'data/items.json';
+import FilterMenu from 'components/FilterMenu';
+import { useMediaQuery } from 'hooks';
 
 const Catalog = () => {
   const [visibleItems, setVisibleItems] = useState(items);
   const [filters, setFilters] = useState([]);
   const [currentSorting, setCurrentSorting] = useState(SORTING_OPTIONS.default);
+  const isDeskVersion = useMediaQuery('1350px');
 
   useEffect(() => {
     const filteredItems = filterItems(items, filters);
@@ -67,54 +69,27 @@ const Catalog = () => {
         <BackLink classNames={[classes.link]} to="/">
           Головна &gt;
         </BackLink>
-        <h1 className={classes.title}>Дитячі коляски</h1>
+        <div className={classes.box}>
+          <h1 className={classes.title}>Дитячі коляски</h1>
+          <Sorting currentSorting={currentSorting} setCurrentSorting={setCurrentSorting} />
+        </div>
 
-        <Sorting currentSorting={currentSorting} setCurrentSorting={setCurrentSorting} />
-        <Filters setFilters={setFilters} currentFilters={filterList} removeFilter={removeFilter} />
-        {visibleItems.length > 0 ? (
-          <ItemList items={visibleItems} />
-        ) : (
-          <p className={classes.info}>Список товарів порожній :(</p>
-        )}
+        <div className={classes.content}>
+          {isDeskVersion ? (
+            <FilterMenu setFilters={setFilters} />
+          ) : (
+            <Filters
+              setFilters={setFilters}
+              currentFilters={filterList}
+              removeFilter={removeFilter}
+            />
+          )}
 
-        <div>
-          <button className={classes.showMoreBtn} type="button">
-            Показати ще
-          </button>
-          <ul className={classes.pagination}>
-            <li>
-              <button className={`${classes.paginationBtn} ${classes.active}`} type="button">
-                1
-              </button>
-            </li>
-            <li>
-              <button className={classes.paginationBtn} type="button">
-                2
-              </button>
-            </li>
-            <li>
-              <button className={classes.paginationBtn} type="button">
-                3
-              </button>
-            </li>
-            <li>
-              <button className={classes.paginationBtn} type="button">
-                4
-              </button>
-            </li>
-            <li>
-              <button className={classes.paginationBtn} type="button">
-                5
-              </button>
-            </li>
-            <li>
-              <button className={classes.arrow} type="button">
-                <svg width="16px" height="16px">
-                  <use href={sprite + '#icon-arrow-right'}></use>
-                </svg>
-              </button>
-            </li>
-          </ul>
+          {visibleItems.length > 0 ? (
+            <ItemList items={visibleItems} />
+          ) : (
+            <p className={classes.info}>Нічого не було знайдено :(</p>
+          )}
         </div>
       </Section>
     </div>

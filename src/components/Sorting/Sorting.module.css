@@ -1,8 +1,6 @@
 .sorting {
   position: relative;
 
-  margin-bottom: 30px;
-
   font-weight: 300;
   font-size: var(--font-size-xs);
   line-height: calc(17 / 15);
